@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free App / Website Demo — Misbah Digital</title>
+<meta name="description" content="Apne business ke liye free app/website demo. Form bharo, Misbah Digital contact karega.">
+<meta property="og:title" content="Apne business ka FREE app demo 🚀"><meta property="og:description" content="Cafe, salon, gym, coaching, shop — 2 minute mein form bharo">
+<meta property="og:image" content="img/icon-512.png"><meta name="theme-color" content="#07070d">
+<link rel="icon" href="img/favicon.png">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#ecebff;background:#07070d radial-gradient(60% 40% at 20% 0%,rgba(124,92,255,.35),transparent 70%),radial-gradient(50% 40% at 100% 30%,rgba(59,130,246,.25),transparent 70%);display:grid;place-items:center;padding:18px}
+.box{width:min(460px,100%);background:rgba(22,22,40,.75);border:1px solid rgba(140,130,255,.2);border-radius:22px;padding:24px;backdrop-filter:blur(14px)}
+img{width:64px;height:64px;border-radius:18px}h1{margin:10px 0 4px;font-size:24px}p{color:#a9a7c9;margin:0 0 16px}
+label{display:block;margin-bottom:12px;font-size:13px;font-weight:600;color:#a9a7c9}
+input,textarea,select{width:100%;margin-top:5px;padding:12px 13px;border-radius:12px;border:1px solid rgba(140,130,255,.25);background:#0d0d18;color:#fff;font:inherit;outline:0}
+input:focus,textarea:focus{border-color:#7c5cff}
+button{width:100%;padding:14px;border:0;border-radius:14px;background:linear-gradient(135deg,#7c5cff,#3b82f6);color:#fff;font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 10px 26px rgba(124,92,255,.4)}
+button[disabled]{opacity:.6}.hp{position:absolute;left:-9999px}.msg{margin-top:12px;font-size:14px;min-height:20px}.ok{color:#22c55e}.bad{color:#f87171}
+.perks{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.perks span{font-size:12px;padding:4px 10px;border-radius:20px;border:1px solid rgba(140,130,255,.3);color:#c4b5fd}
+.f{font-size:12px;color:#6f6d92;text-align:center;margin-top:14px}
+</style>
+</head>
+<body>
+<main class="box">
+  <img src="img/icon-192.png" alt="Misbah Digital">
+  <h1>Apne business ka FREE app demo 🚀</h1>
+  <p>Cafe, bakery, salon, gym, coaching, dukaan — customer phone pe menu dekhe aur seedha WhatsApp pe order/booking kare.</p>
+  <div class="perks"><span>📱 Mobile app jaisa</span><span>💬 WhatsApp order</span><span>⚡ 1 din mein ready</span></div>
+  <form id="f">
+    <label>Aapka naam *<input name="name" required maxlength="80" autocomplete="name" placeholder="Jaise: Rahul"></label>
+    <label>Mobile / WhatsApp *<input name="phone" required inputmode="numeric" maxlength="13" autocomplete="tel" placeholder="10 digit"></label>
+    <label>Business ka naam<input name="business" maxlength="100" placeholder="Jaise: Royal Bakers, Govindpur"></label>
+    <label>Kya chahiye?<textarea name="msg" rows="3" maxlength="600" placeholder="App / website / Insta reels…"></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button id="b">Free demo maango →</button>
+    <div class="msg" id="m" role="status"></div>
+  </form>
+  <div class="f">Made by Misbah Digital · Govindpur, Dhanbad</div>
+</main>
+<script>
+const W = "https://misbah-digital-computer.misbahbuilds123.workers.dev";
+document.getElementById("f").onsubmit = async (e) => {
+  e.preventDefault(); const b = document.getElementById("b"), m = document.getElementById("m");
+  const d = Object.fromEntries(new FormData(e.target)); d.source = new URLSearchParams(location.search).get("src") || "lead-form";
+  if (String(d.phone).replace(/\D/g, "").length < 10) { m.className = "msg bad"; m.textContent = "10 digit mobile number daalo"; return; }
+  b.disabled = true; m.className = "msg"; m.textContent = "Bhej rahe hain…";
+  try { const r = await fetch(W + "/api/public/lead", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(d) }); const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Error"); m.className = "msg ok"; m.textContent = "✅ " + (j.message || "Shukriya!"); e.target.reset(); }
+  catch (err) { m.className = "msg bad"; m.textContent = "😕 " + err.message; }
+  b.disabled = false;
+};
+</script>
+</body>
+</html>
