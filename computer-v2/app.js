@@ -714,7 +714,7 @@
   function loginView(msg) {
     const I = window.ic;
     document.body.innerHTML = `<div class="login"><section class="login-art"><div><span class="eyebrow">Misbah Digital · Computer</span></div>
-      <div><h2>1 Brain. <em>Many agents.</em> Ek shaant jagah.</h2><p style="margin-top:18px">Client apps, reels, leads, invoices aur automations — Telegram se bhi, yahan se bhi.</p></div>
+      <div><h2>One brain. <em>Many agents.</em> Ek shaant jagah.</h2><p style="margin-top:18px">Client apps, reels, leads, invoices aur automations — Telegram se bhi, yahan se bhi.</p></div>
       <div class="tiny la-foot" style="color:#CFCFBE">GitHub + Cloudflare + Gemini · free</div></section>
       <section class="login-side"><div class="box"><div class="mark">M</div><span class="eyebrow">Welcome back</span><h1 style="margin-top:8px">Login karo</h1><p>Apni DASHBOARD_KEY daalo — wahi jo Worker /setup ke liye use karte ho.</p>
       <form id="lf"><label class="field"><span>Dashboard key</span><input id="lk" type="password" autocomplete="current-password" placeholder="••••••••" required></label><button class="btn pri block" id="lb">Login <span class="arw">${I("arrow-right")}</span></button></form><div class="err" id="le">${esc(msg || "")}</div>
