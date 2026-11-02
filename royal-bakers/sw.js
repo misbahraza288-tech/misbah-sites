@@ -1,5 +1,5 @@
 /* Cafe template service worker — offline support. Version badlo to naya cache banega. */
-const CACHE = "md_royal_bakers-mvzenyxo"; // har update pe badlo
+const CACHE = "md_royal_bakers-mvzfb9f1"; // har update pe badlo
 const ASSETS = ["./","index.html","styles.css","app.js","data.js","vendor/qrcode.js","manifest.json","img/apple-touch-icon.png","img/favicon.png","img/hero-1-s.webp","img/hero-1.webp","img/hero-2-s.webp","img/hero-2.webp","img/hero-3-s.webp","img/hero-3.webp","img/icon-192.png","img/icon-512.png","img/icon-maskable-512.png","img/logo.webp","img/poster.webp"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });

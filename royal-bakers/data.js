@@ -7,7 +7,7 @@ window.KANAK_CONFIG = {
  "WHATSAPP_NUMBER": "917488484114",
  "CAFE_NAME": "Royal Bakers",
  "SHORT_NAME": "Royal Bakers",
- "TAGLINE": "Govindpur ke sabse fresh aur tasty cakes.",
+ "TAGLINE": "Govindpur ka sabse fresh aur tasty cake destination",
  "CAFE_PHONE": "+917488484114",
  "ADDRESS": "Govindpur, Dhanbad",
  "AREA": "Govindpur, Dhanbad",
@@ -18,15 +18,15 @@ window.KANAK_CONFIG = {
  "GOOGLE_REVIEWS": 0,
  "PRICE_RANGE": "",
  "SERVICES": [
-  "Home Delivery",
-  "Party Orders",
-  "Custom Cake Design"
+  "Home Delivery in Govindpur",
+  "Custom Order Booking",
+  "Party Orders Accepted"
  ],
  "KNOWN_FOR": [
-  "Birthday Cakes",
+  "Custom Birthday Cakes",
   "Fresh Pastries",
-  "Evening Snacks",
-  "Custom Orders"
+  "Crispy Cookies",
+  "Anniversary Specials"
  ],
  "INSTAGRAM": "",
  "MAPS_URL": "https://www.google.com/maps/search/?api=1&query=Royal%20Bakers%20Govindpur%2C%20Dhanbad",
@@ -61,75 +61,76 @@ window.KANAK_COUPONS = [
 window.KANAK_CATS = [
  {
   "id": "cakes",
-  "n": "Celebration Cakes",
+  "n": "Cakes",
   "e": "🎂"
  },
  {
   "id": "pastries",
-  "n": "Pastries & Slices",
-  "e": "🍰"
+  "n": "Pastries & Snacks",
+  "e": "🧁"
  },
  {
-  "id": "snacks",
-  "n": "Bakery Snacks",
-  "e": "🥐"
+  "id": "cookies",
+  "n": "Cookies & Rusks",
+  "e": "🍪"
  },
  {
-  "id": "beverages",
-  "n": "Cold Drinks",
-  "e": "🥤"
+  "id": "chocolates",
+  "n": "Chocolates & Gifts",
+  "e": "🍫"
  }
 ];
 window.KANAK_MENU = [
  {
   "id": "i1",
   "c": "cakes",
-  "n": "Chocolate Truffle Cake (1 Pound)",
+  "n": "Chocolate Truffle Cake",
   "v": true,
   "p": 450,
   "best": true,
-  "d": "Rich chocolate flavor se bhara hua soft cake."
+  "d": "Rich chocolate flavor with smooth creamy layers."
  },
  {
   "id": "i2",
   "c": "cakes",
-  "n": "Black Forest Cake (1 Pound)",
+  "n": "Black Forest Cake",
   "v": true,
   "p": 400,
-  "d": "Classic cherry aur cream ka lajawab combination."
+  "d": "Classic sponge cake with cherries and cream."
  },
  {
   "id": "i3",
   "c": "cakes",
-  "n": "Butterscotch Cake (1 Pound)",
+  "n": "Pineapple Fresh Cream Cake",
   "v": true,
-  "p": 420,
+  "p": 380,
   "best": true,
-  "d": "Crunchy butterscotch bits aur smooth vanilla cream."
+  "d": "Light sponge cake loaded with fresh pineapple bits."
  },
  {
   "id": "i4",
   "c": "cakes",
-  "n": "Pineapple Fresh Cake (1 Pound)",
+  "n": "Red Velvet Cake",
   "v": true,
-  "p": 380,
-  "d": "Halka-fulka aur fresh pineapple taste."
+  "p": 550,
+  "d": "Velvety texture with special cream cheese frosting."
  },
  {
   "id": "i5",
   "c": "cakes",
-  "n": "Red Velvet Cake (1 Pound)",
+  "n": "Butterscotch Cake",
   "v": true,
-  "p": 550,
-  "d": "Premium cream cheese frosting ke sath rich taste."
+  "p": 420,
+  "d": "Crunchy butterscotch nuts with caramel touch."
  },
  {
   "id": "i6",
   "c": "pastries",
-  "n": "Chocolate Pastry",
+  "n": "Choco Lava Pastry",
   "v": true,
-  "p": 60,
-  "d": "Ekdum soft aur chocolatey ek-bite treat."
+  "p": 70,
+  "best": true,
+  "d": "Warm liquid chocolate bursting inside soft pastry."
  },
  {
   "id": "i7",
@@ -137,73 +138,64 @@ window.KANAK_MENU = [
   "n": "Black Forest Pastry",
   "v": true,
   "p": 50,
-  "d": "Choti craving ke liye best pastry option."
+  "d": "Single serve classic cherry chocolate pastry."
  },
  {
   "id": "i8",
   "c": "pastries",
-  "n": "Pineapple Pastry",
+  "n": "Veg Patties",
   "v": true,
-  "p": 50,
-  "d": "Fresh pineapple aur sponge cake ka maza."
+  "p": 30,
+  "d": "Khasta puff filled with spicy potato stuffing."
  },
  {
   "id": "i9",
-  "c": "snacks",
-  "n": "Veg Patties",
+  "c": "pastries",
+  "n": "Paneer Roll",
   "v": true,
-  "p": 25,
-  "best": true,
-  "d": "Garam aur crispy aloo stuffed patties."
+  "p": 50,
+  "d": "Soft bread roll stuffed with masala paneer."
  },
  {
   "id": "i10",
-  "c": "snacks",
-  "n": "Paneer Patties",
+  "c": "cookies",
+  "n": "Ajwain Cookies",
   "v": true,
-  "p": 40,
-  "d": "Spicy paneer stuffing wali crispy patty."
+  "p": 120,
+  "d": "Crispy tea-time biscuits with carom seeds."
  },
  {
   "id": "i11",
-  "c": "snacks",
-  "n": "Veg Burger",
+  "c": "cookies",
+  "n": "Nankhatai",
   "v": true,
-  "p": 60,
-  "d": "Crispy aloo tikki burger with special sauce."
+  "p": 140,
+  "best": true,
+  "d": "Traditional Indian shortbread biscuits melting in mouth."
  },
  {
   "id": "i12",
-  "c": "snacks",
-  "n": "Chicken Burger",
-  "v": false,
-  "p": 80,
-  "best": true,
-  "d": "Juicy chicken patty ke sath tasty burger."
+  "c": "cookies",
+  "n": "Cashew Cookies",
+  "v": true,
+  "p": 180,
+  "d": "Rich buttery cookies loaded with real cashew bits."
  },
  {
   "id": "i13",
-  "c": "snacks",
-  "n": "Garlic Bread",
+  "c": "chocolates",
+  "n": "Homemade Chocolate Box",
   "v": true,
-  "p": 90,
-  "d": "Cheesy aur buttery garlic bread sticks."
+  "p": 250,
+  "d": "Assorted handmade chocolates packed nicely for gifting."
  },
  {
   "id": "i14",
-  "c": "beverages",
-  "n": "Cold Coffee",
+  "c": "chocolates",
+  "n": "Birthday Candle Pack",
   "v": true,
-  "p": 70,
-  "d": "Thandi aur creamy cold coffee."
- },
- {
-  "id": "i15",
-  "c": "beverages",
-  "n": "Soft Drink (600ml)",
-  "v": true,
-  "p": 40,
-  "d": "Thandi cold drink snacks ke sath."
+  "p": 30,
+  "d": "Sparkler and magic candles for cake celebration."
  }
 ];
 window.KANAK_OFFERS = [
@@ -217,16 +209,16 @@ window.KANAK_OFFERS = [
  },
  {
   "id": "o1",
-  "title": "Free Birthday Candle",
-  "sub": "Har cake order ke sath candle aur knife free.",
+  "title": "Free Delivery",
+  "sub": "Orders above Rs 500 in Govindpur",
   "itemId": "",
   "tag": "OFFER",
   "on": true
  },
  {
   "id": "o2",
-  "title": "Combo Offer",
-  "sub": "2 Patties aur 1 Cold Coffee sirf Rs. 99 mein.",
+  "title": "Flat 10% Off",
+  "sub": "On all advance birthday cake bookings",
   "itemId": "",
   "tag": "OFFER",
   "on": true
@@ -236,17 +228,17 @@ window.KANAK_HERO = [
  {
   "img": "img/hero-1.webp",
   "title": "Royal Bakers",
-  "sub": "Govindpur ka sabse fresh cake"
+  "sub": "Freshly baked cakes daily"
  },
  {
   "img": "img/hero-2.webp",
-  "title": "Govindpur ke sabse fresh aur tasty cakes.",
-  "sub": "Daily fresh baking"
+  "title": "Govindpur ka sabse fresh aur tasty cake destination",
+  "sub": "Order online for Govindpur delivery"
  },
  {
   "img": "img/hero-3.webp",
-  "title": "Govindpur ke sabse fresh aur tasty cakes.",
-  "sub": "Order now for home delivery"
+  "title": "Govindpur ka sabse fresh aur tasty cake destination",
+  "sub": "Taste the royal sweetness"
  }
 ];
 window.KANAK_GALLERY = [

@@ -159,7 +159,7 @@
     const offers = OFFERS.filter((x) => x.on);
     app.innerHTML = `<div class="page">
       <section class="hero" aria-label="Photos">
-        <a class="gbadge" href="${CFG.REVIEW_URL}" target="_blank" rel="noopener"><span class="g">G</span><span class="st">★</span> ${CFG.GOOGLE_RATING} · ${CFG.GOOGLE_REVIEWS} reviews</a>
+        ${CFG.GOOGLE_RATING ? `<a class="gbadge" href="${CFG.REVIEW_URL}" target="_blank" rel="noopener"><span class="g">G</span><span class="st">★</span> ${CFG.GOOGLE_RATING} · ${CFG.GOOGLE_REVIEWS} reviews</a>` : ""}
         <div class="hero-track" id="heroTrack">${window.KANAK_HERO.map((s) => `<div class="slide"><img src="${s.img}" alt="${esc(s.title)}"><div class="cap"><b>${esc(s.title)}</b><span>${esc(s.sub)}</span></div></div>`).join("")}</div>
         <div class="hero-dots" id="heroDots">${window.KANAK_HERO.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</div>
         <a class="btn gold hero-cta" href="#/menu">${t("order_now")} →</a>
