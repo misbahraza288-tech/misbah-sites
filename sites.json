@@ -1,5 +1,19 @@
 [
   {
+    "slug": "premium-demo",
+    "name": "Premium Demo Cafe",
+    "type": "cafe",
+    "area": "Govindpur",
+    "phone": "+917488484114",
+    "url": "https://misbahraza288-tech.github.io/misbah-sites/premium-demo/",
+    "theme": "premium",
+    "created": "2026-11-03T02:17:20.685Z",
+    "updated": "2026-11-03T02:17:20.685Z",
+    "sample": true,
+    "items": 12,
+    "ai": true
+  },
+  {
     "slug": "royal-bakers-govindpur",
     "name": "Royal Bakers",
     "type": "bakery",

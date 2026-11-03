@@ -1,0 +1,154 @@
+/* =====================================================================
+   PREMIUM theme — "Velora" cream + olive (Misbah ka taste)
+   Cormorant Garamond headings + Inter body · #F1EEE7 cream · #5E6350 olive
+   No glass/blur, no emoji icons (theme.js line SVG lagata hai), soft shadow, fade-up.
+   Site Builder: /site Naam | cafe | area | phone | theme=premium
+   ===================================================================== */
+html.theme-premium{
+  --bg:#F1EEE7;--bg2:#E9E5DC;--card:#FBFAF6;--card2:#F4F1EA;--line:#E2DDD1;
+  --tx:#1E1E1C;--tx2:#5C5B55;--tx3:#8D8B82;--gold:#5E6350;--gold2:#8A8F78;
+  --red:#A3523F;--green:#5E7A4E;--nonveg:#A3523F;--ink:#1E1E1C;--on-ink:#F6F3EC;
+  --shadow:0 1px 2px rgba(40,36,24,.04),0 6px 22px rgba(40,36,24,.07);
+  --serif:"Cormorant Garamond","Playfair Display",Georgia,serif;--r:18px;
+  --ease:cubic-bezier(.2,.7,.2,1)}
+html.theme-premium[data-theme=dark]{
+  --bg:#1A1C16;--bg2:#22251D;--card:#25281F;--card2:#2C2F25;--line:#373A2E;
+  --tx:#EFECE3;--tx2:#C2BFB3;--tx3:#8F8D82;--gold:#B7BC9E;--gold2:#8A8F78;--ink:#EFECE3;--on-ink:#1A1C16;
+  --shadow:0 1px 2px rgba(0,0,0,.25),0 8px 24px rgba(0,0,0,.25)}
+html.theme-premium,html.theme-premium body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:-.005em;-webkit-font-smoothing:antialiased}
+html.theme-premium body{line-height:1.5}
+.theme-premium #app{max-width:640px;margin:0 auto}
+.theme-premium :focus-visible{outline:2px solid var(--gold)}
+
+/* icons (theme.js) */
+.theme-premium svg.pi{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em;flex:0 0 auto}
+
+/* splash */
+.theme-premium #splash{background:var(--bg)}
+.theme-premium .splash-logo{width:120px;border-radius:50%;box-shadow:var(--shadow)}
+.theme-premium #splash .splash-name{font-family:var(--serif);font-weight:600;font-size:38px;color:var(--tx)!important;letter-spacing:0}
+.theme-premium .splash-tag{color:var(--tx2);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+.theme-premium .splash-bar{background:var(--line);height:2px;width:120px}
+.theme-premium .splash-bar i{background:var(--gold)}
+
+/* top bar — solid, no blur */
+.theme-premium .topbar{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:1px solid var(--line);padding-left:18px;padding-right:18px}
+.theme-premium .top-logo{border-radius:50%;width:38px;height:38px}
+.theme-premium .top-title strong{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:0;line-height:1.1}
+.theme-premium .status-line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3)}
+.theme-premium .icon-btn{border-radius:50%;background:transparent;border-color:var(--line);font-size:18px;color:var(--tx)}
+
+/* headings */
+.theme-premium h1,.theme-premium h2,.theme-premium h3,.theme-premium h4{font-family:var(--serif);font-weight:600;letter-spacing:0}
+.theme-premium h2.sec{font-size:28px;margin:38px 2px 16px;line-height:1.1}
+.theme-premium h2.sec a{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.theme-premium .cat-sec h3{font-size:26px}
+.theme-premium .card h4{font-size:24px;margin-bottom:6px}
+.theme-premium .small,.theme-premium small{letter-spacing:0}
+
+/* hero — cream image, ink text, no dark overlay */
+.theme-premium .hero{background:var(--bg2);border-radius:24px;box-shadow:var(--shadow);aspect-ratio:4/4.1}
+.theme-premium .slide::after{background:linear-gradient(180deg,rgba(241,238,231,0) 40%,rgba(241,238,231,.88) 82%)}
+.theme-premium[data-theme=dark] .slide::after{background:linear-gradient(180deg,rgba(26,28,22,0) 40%,rgba(26,28,22,.85))}
+.theme-premium .slide .cap{color:var(--tx);bottom:92px;left:24px;right:24px}
+.theme-premium .slide .cap b{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.02;text-shadow:none;letter-spacing:-.005em}
+.theme-premium .slide .cap span{color:var(--tx2);font-size:14px;display:block;margin-top:8px}
+.theme-premium .hero-dots{bottom:44px;right:24px}
+.theme-premium .hero-dots i{background:rgba(30,30,28,.22);height:3px;border-radius:2px}
+.theme-premium .hero-dots i.on{background:var(--tx)}
+.theme-premium .hero-cta{left:24px;bottom:28px}
+
+/* buttons — ink pill + olive outline */
+.theme-premium .btn{border-radius:999px;font-weight:600;letter-spacing:.02em;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+.theme-premium .btn.gold{background:var(--ink);color:var(--on-ink);box-shadow:0 6px 18px rgba(30,30,28,.16)}
+.theme-premium .btn.gold:hover{transform:translateY(-1px)}
+.theme-premium .btn.ghost{background:transparent;border:1px solid var(--tx);color:var(--tx)}
+.theme-premium .btn.wa{background:var(--gold);color:#fff;box-shadow:none}
+.theme-premium .btn .pi{font-size:1.05em}
+.theme-premium .add{border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-size:11.5px;letter-spacing:.16em;font-weight:600;min-width:78px;height:36px;transition:background .2s,color .2s}
+.theme-premium .add:active,.theme-premium .add:hover{background:var(--gold);color:#fff}
+
+/* status card */
+.theme-premium svg.pi-fill{fill:currentColor;stroke:none}
+.theme-premium .status-card .big{color:var(--green)}
+.theme-premium .status-card:has(.pill.closed) .big{color:var(--red)}
+.theme-premium .status-card{border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);padding:16px 18px;margin-top:18px}
+.theme-premium .status-card .big{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--bg2);font-size:22px}
+.theme-premium .pill{border-radius:999px;font-size:10px;letter-spacing:.14em;font-weight:600;padding:3px 9px}
+.theme-premium .pill.open{background:#E4E9DC;color:#4E6A40}
+.theme-premium .pill.closed{background:#EFE2DC;color:#8E4A38}
+
+/* categories */
+.theme-premium .chips{gap:10px}
+.theme-premium .cat-tile{width:88px;font-size:12.5px;font-weight:500;color:var(--tx2)}
+.theme-premium .cat-tile .e{width:66px;height:66px;border-radius:50%;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);font-size:26px;color:var(--gold);transition:transform .3s var(--ease)}
+.theme-premium .cat-tile:hover .e{transform:translateY(-3px)}
+.theme-premium .chip{border-radius:999px;background:transparent;border:1px solid var(--line);font-weight:500;color:var(--tx2)}
+.theme-premium .chip.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+
+/* offers — olive blocks, not rainbow */
+.theme-premium .offer,.theme-premium .offer:nth-child(2n),.theme-premium .offer:nth-child(3n){background:var(--gold);color:#F6F3EC;border-radius:20px;box-shadow:var(--shadow)}
+.theme-premium .offer:nth-child(2n){background:#4A4E3F}
+.theme-premium .offer .tag{background:rgba(255,255,255,.14);letter-spacing:.16em;font-weight:600;font-size:10px;border-radius:999px;padding:4px 10px}
+.theme-premium .offer b{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.05}
+.theme-premium .offer .ic{font-size:86px;opacity:.16;right:-6px;bottom:-12px;color:#fff}
+
+/* product cards */
+.theme-premium .grid{gap:14px}
+.theme-premium .pcard{border-radius:20px;box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.theme-premium .pcard:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(40,36,24,.05),0 14px 34px rgba(40,36,24,.10)}
+.theme-premium .ph,.theme-premium[data-theme=light] .ph{background:linear-gradient(160deg,#ECE8DE,#DFDACC)}
+.theme-premium[data-theme=dark] .ph{background:linear-gradient(160deg,#2C2F25,#22251D)}
+.theme-premium .ph .emo{font-size:38px;color:var(--gold)}
+.theme-premium .item .ph .emo{font-size:30px}
+.theme-premium .ph .emo small,.theme-premium[data-theme=light] .ph .emo small{color:var(--tx3);letter-spacing:.18em;font-weight:600;font-size:8.5px}
+.theme-premium .ribbon{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:999px;font-size:9px;letter-spacing:.14em;font-weight:600;padding:4px 8px}
+.theme-premium .pcard .nm,.theme-premium .item .nm{font-weight:600}
+.theme-premium .price{color:var(--tx);font-weight:600}
+.theme-premium .best{color:var(--gold);font-size:10px;letter-spacing:.14em;font-weight:600}
+.theme-premium .item{border-bottom:1px solid var(--line);padding:16px 2px}
+.theme-premium .item .ph{border-radius:16px}
+.theme-premium .vdot{border-radius:2px}
+.theme-premium .search{border-radius:999px;background:var(--card);box-shadow:var(--shadow);border-color:var(--line);color:var(--tx3)}
+
+/* cards, lists, more */
+.theme-premium .card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.theme-premium .tagrow span{border-radius:999px;background:var(--bg2);border:0;color:var(--tx2);font-weight:500}
+.theme-premium .list{border-radius:20px;box-shadow:var(--shadow)}
+.theme-premium .li .ic{border-radius:50%;background:var(--bg2);color:var(--gold);font-size:18px}
+.theme-premium .li b{font-weight:600}
+.theme-premium .profile{background:var(--gold);color:#F6F3EC;border-radius:24px}
+.theme-premium .profile img{border-radius:50%}
+.theme-premium .profile b{font-family:var(--serif);font-size:26px;font-weight:600}
+.theme-premium .empty .e{font-size:54px;color:var(--gold)}
+.theme-premium .made{color:var(--tx3)}
+
+/* bottom tab bar — solid, thin icons */
+.theme-premium .tabbar{background:var(--card);backdrop-filter:none;-webkit-backdrop-filter:none;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(40,36,24,.05)}
+.theme-premium .tabbar a{font-size:10.5px;font-weight:500;letter-spacing:.04em;color:var(--tx3)}
+.theme-premium .tabbar .ti{font-size:22px}
+.theme-premium .tabbar a.on{color:var(--tx)}
+.theme-premium .tabbar a{position:relative}
+.theme-premium .tabbar a.on::before{content:"";position:absolute;top:0;left:50%;width:22px;height:2px;margin-left:-11px;border-radius:2px;background:var(--gold)}
+
+/* sheet + toast */
+.theme-premium .sheet{background:var(--card);border-radius:26px 26px 0 0}
+.theme-premium #toast{background:var(--ink);color:var(--on-ink);border-radius:999px}
+
+/* fade-up entrance (theme.js .pm-enter lagata hai route badalne pe) */
+@keyframes pmUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.theme-premium .pm-enter>*{animation:pmUp .7s var(--ease) both}
+.theme-premium .pm-enter>*:nth-child(2){animation-delay:.06s}
+.theme-premium .pm-enter>*:nth-child(3){animation-delay:.12s}
+.theme-premium .pm-enter>*:nth-child(4){animation-delay:.18s}
+.theme-premium .pm-enter>*:nth-child(5){animation-delay:.24s}
+.theme-premium .pm-enter>*:nth-child(6){animation-delay:.30s}
+.theme-premium .pm-enter>*:nth-child(n+7){animation-delay:.36s}
+@media (prefers-reduced-motion:reduce){.theme-premium .pm-enter>*{animation:none}}
+
+/* desktop — centred, breathing room */
+@media (min-width:900px){
+  .theme-premium .topbar{padding-left:max(24px,calc(50% - 320px));padding-right:max(24px,calc(50% - 320px))}
+  .theme-premium .tabbar{left:50%;right:auto;width:560px;transform:translateX(-50%);bottom:18px;border:1px solid var(--line);border-radius:999px;height:64px;padding-bottom:0}
+  .theme-premium .grid{grid-template-columns:repeat(3,1fr)}
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hi-Latn" data-theme="light" class="theme-premium">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Premium Demo Cafe — Order Online</title>
+<meta name="description" content="Demo Cafe — dekho aur WhatsApp pe order/booking karo.">
+<meta name="theme-color" content="#F1EEE7">
+<style>:root{--gold:#5E6350;--gold2:#8A8F78}#splash .splash-name{color:#8A8F78}</style>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Demo Cafe">
+<meta property="og:title" content="Premium Demo Cafe — Order Online">
+<meta property="og:description" content="Menu dekho, WhatsApp pe order karo">
+<meta property="og:image" content="img/poster.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div id="splash" aria-hidden="true">
+  <div class="splash-in">
+    <img src="img/logo.webp" alt="" class="splash-logo">
+    <div class="splash-name">Demo Cafe</div>
+    <div class="splash-tag">Govindpur ka sabse premium cafe experience</div>
+    <div class="splash-bar"><i></i></div>
+  </div>
+</div>
+
+<header class="topbar" id="topbar">
+  <button class="icon-btn back" id="backBtn" aria-label="Wapas" hidden>‹</button>
+  <img src="img/logo.webp" alt="Logo" class="top-logo" id="topLogo">
+  <div class="top-title">
+    <strong id="topTitle">Demo Cafe</strong>
+    <span id="topSub" class="status-line"></span>
+  </div>
+  <button class="icon-btn" id="themeQuick" aria-label="Dark / light mode">◐</button>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<nav class="tabbar" id="tabbar" aria-label="App tabs">
+  <a href="#/home" data-tab="home"><span class="ti">⌂</span><span data-i="tab_home">Home</span></a>
+  <a href="#/menu" data-tab="menu"><span class="ti">☰</span><span data-i="tab_menu">Menu</span></a>
+  <a href="#/cart" data-tab="cart" class="tab-cart"><span class="ti">🛒<b id="cartBadge" hidden>0</b></span><span data-i="tab_cart">Cart</span></a>
+  <a href="#/orders" data-tab="orders"><span class="ti">🧾</span><span data-i="tab_orders">Orders</span></a>
+  <a href="#/more" data-tab="more"><span class="ti">⋯</span><span data-i="tab_more">More</span></a>
+</nav>
+
+<div id="sheetWrap" class="sheet-wrap" hidden>
+  <div class="sheet-bg" data-close></div>
+  <section class="sheet" role="dialog" aria-modal="true" id="sheet"></section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="padding:20px">Ye app chalane ke liye JavaScript on karo.</p></noscript>
+<script src="data.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="theme.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
