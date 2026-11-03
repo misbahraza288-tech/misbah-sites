@@ -1,62 +1,39 @@
 <!doctype html>
-<html lang="hi-Latn" data-theme="dark">
+<html lang="hi-Latn" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kanak Cafe & Restaurant · Govindpur — Order Online</title>
-<meta name="description" content="Kanak Cafe & Restaurant, GT Road Govindpur (Dhanbad) — menu dekho, WhatsApp pe order karo. Momos, Rolls, Chinese, Pizza, Burger.">
-<meta name="theme-color" content="#16120e">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="img/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<title>Kanak Cafe &amp; Restaurant · Order online</title>
+<meta name="description" content="Kanak Cafe & Restaurant, GT Road, Govindpur — momos, rolls, chinese, pizza. Menu dekho aur seedha order karo.">
+<meta name="theme-color" content="#F6F1E9">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Kanak Cafe">
-<meta property="og:title" content="Kanak Cafe & Restaurant — Order Online">
-<meta property="og:description" content="Menu dekho, WhatsApp pe order karo · GT Road, Govindpur">
+<meta property="og:title" content="Kanak Cafe & Restaurant — Order online">
+<meta property="og:description" content="Momos · Rolls · Chinese · Pizza · GT Road, Govindpur. Menu dekho, order karo.">
 <meta property="og:image" content="img/poster.webp">
-<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=3.0.0">
+<script>try{var p=JSON.parse(localStorage.getItem("kanak3:prefs")||"{}");var d=p.theme==="dark"||(p.theme==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.dataset.theme=d?"dark":"light"}catch(e){}</script>
 </head>
 <body>
-<div id="splash" aria-hidden="true">
-  <div class="splash-in">
-    <img src="img/logo.webp" alt="" class="splash-logo">
-    <div class="splash-name">Kanak Cafe</div>
-    <div class="splash-tag">Swaad jo dil le le ❤️</div>
-    <div class="splash-bar"><i></i></div>
-  </div>
+<div class="shell">
+  <header class="topbar" id="topbar"></header>
+  <main class="view" id="view" aria-live="polite"></main>
 </div>
-
-<header class="topbar" id="topbar">
-  <button class="icon-btn back" id="backBtn" aria-label="Wapas" hidden>‹</button>
-  <img src="img/logo.webp" alt="Kanak Cafe logo" class="top-logo" id="topLogo">
-  <div class="top-title">
-    <strong id="topTitle">Kanak Cafe</strong>
-    <span id="topSub" class="status-line">GT Road, Govindpur</span>
-  </div>
-  <button class="icon-btn" id="themeQuick" aria-label="Dark / light mode">◐</button>
-</header>
-
-<main id="app" tabindex="-1"></main>
-
-<nav class="tabbar" id="tabbar" aria-label="App tabs">
-  <a href="#/home" data-tab="home"><span class="ti">⌂</span><span data-i="tab_home">Home</span></a>
-  <a href="#/menu" data-tab="menu"><span class="ti">☰</span><span data-i="tab_menu">Menu</span></a>
-  <a href="#/cart" data-tab="cart" class="tab-cart"><span class="ti">🛒<b id="cartBadge" hidden>0</b></span><span data-i="tab_cart">Cart</span></a>
-  <a href="#/orders" data-tab="orders"><span class="ti">🧾</span><span data-i="tab_orders">Orders</span></a>
-  <a href="#/more" data-tab="more"><span class="ti">⋯</span><span data-i="tab_more">More</span></a>
-</nav>
-
-<div id="sheetWrap" class="sheet-wrap" hidden>
-  <div class="sheet-bg" data-close></div>
-  <section class="sheet" role="dialog" aria-modal="true" id="sheet"></section>
-</div>
-<div id="toast" role="status" aria-live="polite"></div>
-
-<noscript><p style="padding:20px">Ye app chalane ke liye JavaScript on karo.</p></noscript>
-<script src="data.js"></script>
+<div id="dock"></div>
+<div class="floatcart" id="floatCart"></div>
+<nav class="nav" id="nav" aria-label="Main"></nav>
+<div class="toast" id="toast" role="status"></div>
+<noscript><p style="padding:20px">Ye app chalane ke liye JavaScript on karein.</p></noscript>
+<script src="data.js?v=3.0.0"></script>
+<script src="icons.js?v=3.0.0"></script>
 <script src="vendor/qrcode.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=3.0.0"></script>
 </body>
 </html>
