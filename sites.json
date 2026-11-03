@@ -1,5 +1,18 @@
 [
   {
+    "slug": "royal-bakers-govindpur",
+    "name": "Royal Bakers",
+    "type": "bakery",
+    "area": "Govindpur",
+    "phone": "+917488484114",
+    "url": "https://misbahraza288-tech.github.io/misbah-sites/royal-bakers-govindpur/",
+    "created": "2026-11-03T01:44:55.957Z",
+    "updated": "2026-11-03T01:44:55.957Z",
+    "sample": true,
+    "items": 14,
+    "ai": true
+  },
+  {
     "slug": "royal-bakers",
     "name": "Royal Bakers",
     "type": "bakery",

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="hi-Latn" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Royal Bakers — Order Online</title>
+<meta name="description" content="Royal Bakers — dekho aur WhatsApp pe order/booking karo.">
+<meta name="theme-color" content="#16120e">
+<style>:root{--gold:#f0a6c0;--gold2:#ffd1e0}#splash .splash-name{color:#ffd1e0}</style>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Royal Bakers">
+<meta property="og:title" content="Royal Bakers — Order Online">
+<meta property="og:description" content="Menu dekho, WhatsApp pe order karo">
+<meta property="og:image" content="img/poster.webp">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="splash" aria-hidden="true">
+  <div class="splash-in">
+    <img src="img/logo.webp" alt="" class="splash-logo">
+    <div class="splash-name">Royal Bakers</div>
+    <div class="splash-tag">Govindpur ke sabse fresh aur tasty cakes.</div>
+    <div class="splash-bar"><i></i></div>
+  </div>
+</div>
+
+<header class="topbar" id="topbar">
+  <button class="icon-btn back" id="backBtn" aria-label="Wapas" hidden>‹</button>
+  <img src="img/logo.webp" alt="Logo" class="top-logo" id="topLogo">
+  <div class="top-title">
+    <strong id="topTitle">Royal Bakers</strong>
+    <span id="topSub" class="status-line"></span>
+  </div>
+  <button class="icon-btn" id="themeQuick" aria-label="Dark / light mode">◐</button>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<nav class="tabbar" id="tabbar" aria-label="App tabs">
+  <a href="#/home" data-tab="home"><span class="ti">⌂</span><span data-i="tab_home">Home</span></a>
+  <a href="#/menu" data-tab="menu"><span class="ti">☰</span><span data-i="tab_menu">Menu</span></a>
+  <a href="#/cart" data-tab="cart" class="tab-cart"><span class="ti">🛒<b id="cartBadge" hidden>0</b></span><span data-i="tab_cart">Cart</span></a>
+  <a href="#/orders" data-tab="orders"><span class="ti">🧾</span><span data-i="tab_orders">Orders</span></a>
+  <a href="#/more" data-tab="more"><span class="ti">⋯</span><span data-i="tab_more">More</span></a>
+</nav>
+
+<div id="sheetWrap" class="sheet-wrap" hidden>
+  <div class="sheet-bg" data-close></div>
+  <section class="sheet" role="dialog" aria-modal="true" id="sheet"></section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="padding:20px">Ye app chalane ke liye JavaScript on karo.</p></noscript>
+<script src="data.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
