@@ -1,6 +1,6 @@
 /* Kanak Cafe v3 — offline cache. Version badlo toh sabke phone pe naya app aata hai. */
-const VERSION = "kanak-v3.0.0";
-const CORE = ["./", "index.html", "styles.css?v=3.0.0", "app.js?v=3.0.0", "data.js?v=3.0.0", "icons.js?v=3.0.0", "vendor/qrcode.js", "manifest.json", "fonts/inter.woff2", "fonts/fraunces.woff2",
+const VERSION = "kanak-v3.0.1";
+const CORE = ["./", "index.html", "styles.css?v=3.0.1", "app.js?v=3.0.1", "data.js?v=3.0.1", "icons.js?v=3.0.1", "vendor/qrcode.js", "manifest.json", "fonts/inter.woff2", "fonts/fraunces.woff2",
   "img/apple-touch-icon.png", "img/cafe-counter-s.webp", "img/cafe-counter.webp", "img/cafe-front-s.webp", "img/cafe-front.webp", "img/cafe-front2-s.webp", "img/cafe-front2.webp", "img/chicken-chilli-s.webp", "img/chicken-chilli.webp", "img/favicon.png", "img/icon-192.png", "img/icon-512.png", "img/icon-maskable-512.png", "img/interior-s.webp", "img/interior.webp", "img/logo.webp", "img/lollipop-s.webp", "img/lollipop.webp", "img/menu-cover.webp", "img/momo-chilli-s.webp", "img/momo-chilli.webp", "img/momo-panfried-s.webp", "img/momo-panfried.webp", "img/poster-s.webp", "img/poster.webp"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => Promise.all(CORE.map((u) => c.add(new Request(u, { cache: "reload" })).catch(() => null)))).then(() => self.skipWaiting()));

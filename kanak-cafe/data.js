@@ -54,10 +54,12 @@ window.APP_STATIC = {
     "menu-cover"
   ],
   "api": "https://misbah-digital-computer.misbahbuilds123.workers.dev/api/kanak",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "madeBy": "Misbah Digital",
   "madeByWhatsapp": "917488484114",
-  "storageKey": "kanak3"
+  "storageKey": "kanak3",
+  "area": "Govindpur · Dhanbad",
+  "searchHint": "Momos, roll, noodles dhundo…"
 };
 window.APP_SEED_CONFIG = {
   "name": "Kanak Cafe & Restaurant",

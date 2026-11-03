@@ -1,5 +1,5 @@
 /* =====================================================================
-   Kanak Cafe App v3 — Restaurant App Pro template (Misbah Digital)
+   Restaurant App Pro v3 (Misbah Digital) — pehla client: Kanak Cafe
    6 screens: Home · Menu · Cart · Orders · Profile · Settings (+ Owner Panel)
    Vanilla JS, koi framework nahi. Data: server (Cloudflare KV) → cache → data.js seed.
    ===================================================================== */
@@ -44,7 +44,7 @@
       open: "Abhi khula hai", closed: "Abhi band hai", closesAt: "band hoga", opensAt: "khulega",
       call: "Call", directions: "Raasta", whatsapp: "WhatsApp", share: "Share",
       offers: "Aaj ke offers", cats: "Kya khayenge?", popular: "Sabse pasand", seeAll: "Sab dekho", visit: "Cafe aaiye",
-      search: "Momos, roll, noodles dhundo…", vegOnly: "Sirf veg", add: "ADD", half: "Half", full: "Full", out: "Khatam",
+      search: "Kya khana hai? Dhundo…", vegOnly: "Sirf veg", add: "ADD", half: "Half", full: "Full", out: "Khatam",
       addToCart: "Cart mein daalo", items: "items", viewCart: "Cart dekho",
       cartEmpty: "Cart khaali hai", cartEmptySub: "Menu se kuch tasty chuniye", browse: "Menu dekho",
       orderType: "Order kaise chahiye?", dinein: "Dine-in", takeaway: "Takeaway", delivery: "Delivery",
@@ -61,7 +61,7 @@
       open: "Open now", closed: "Closed now", closesAt: "closes", opensAt: "opens",
       call: "Call", directions: "Directions", whatsapp: "WhatsApp", share: "Share",
       offers: "Today's offers", cats: "Categories", popular: "Most loved", seeAll: "See all", visit: "Visit us",
-      search: "Search momos, rolls, noodles…", vegOnly: "Veg only", add: "ADD", half: "Half", full: "Full", out: "Sold out",
+      search: "Search dishes…", vegOnly: "Veg only", add: "ADD", half: "Half", full: "Full", out: "Sold out",
       addToCart: "Add to cart", items: "items", viewCart: "View cart",
       cartEmpty: "Your cart is empty", cartEmptySub: "Pick something tasty from the menu", browse: "Browse menu",
       orderType: "How would you like it?", dinein: "Dine-in", takeaway: "Takeaway", delivery: "Delivery",
@@ -241,14 +241,14 @@
   // =============== 1. HOME ===============
   let heroTimer;
   SCREENS.home = (el) => {
-    topbar(`<div class="title brandmark"><img src="img/logo.webp" alt=""><div><div class="kicker">Govindpur · Dhanbad</div><h1>${esc(CFG.short || CFG.name)}</h1></div></div>
+    topbar(`<div class="title brandmark"><img src="img/logo.webp" alt=""><div><div class="kicker">${esc(S.area || "Order online")}</div><h1>${esc(CFG.short || CFG.name)}</h1></div></div>
       <a class="iconbtn" href="#/profile" aria-label="Profile">${icon("user")}${user ? "" : '<span class="dot"></span>'}</a>`);
     const st = statusLine();
     const hero = S.hero || [];
     const offers = (CFG.offers || []).filter((o) => o.on);
     const popular = visibleItems().filter((m) => m.best).slice(0, 10);
     el.innerHTML = `<div class="stagger">
-      <section class="hero" aria-label="Kanak Cafe">
+      <section class="hero" aria-label="${esc(CFG.name)}">
         ${hero.map((h, i) => `<div class="slide ${i ? "" : "on"}"><img src="${esc(imgSrc(h.img))}" alt="" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}></div>`).join("")}
         <div class="dots">${hero.map((h, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</div>
         <div class="cap"><span class="pill ${st.op ? "" : "closed"}"><span class="led"></span>${esc(st.text)}</span>
@@ -270,7 +270,7 @@
       <div class="card infocard">
         <div class="r">${icon("clock")}<div><b>${fmt12(CFG.open)} – ${fmt12(CFG.close)}</b><span>Roz khula · Mon–Sun</span></div></div>
         <div class="r">${icon("pin")}<div><b>${esc(CFG.name)}</b><span>${esc(CFG.address)}</span></div></div>
-        <div class="r">${icon("star")}<div><b>${esc(S.rating)} Google rating</b><span>${esc(S.reviews)} reviews · ${esc(S.priceRange)}</span></div></div>
+        ${S.rating ? `<div class="r">${icon("star")}<div><b>${esc(S.rating)} Google rating</b><span>${esc(S.reviews)} reviews${S.priceRange ? " · " + esc(S.priceRange) : ""}</span></div></div>` : ""}
         <div class="r">${icon("store")}<div><b>${(S.services || []).map(esc).join(" · ")}</b><span>${CFG.delivery.on ? "Delivery: " + esc(CFG.delivery.area || "") : "Delivery abhi band"}</span></div></div>
       </div>
       <div class="sec"><h2>${t("visit")}</h2></div>
@@ -295,7 +295,7 @@
     titleBar(t("menu"), `${visibleItems().length} dishes · Half & Full`, `<button class="iconbtn" data-act="vegtoggle" aria-label="Veg">${icon("leaf")}</button>`);
     const cat = params.cat || "all";
     el.innerHTML = `<div class="menutools">
-        <label class="searchbar">${icon("search")}<input id="q" type="search" placeholder="${esc(t("search"))}" value="${esc(menuQ)}" autocomplete="off" enterkeyhint="search"></label>
+        <label class="searchbar">${icon("search")}<input id="q" type="search" placeholder="${esc(S.searchHint || t("search"))}" value="${esc(menuQ)}" autocomplete="off" enterkeyhint="search"></label>
         <div class="row" style="margin-top:12px;gap:10px">
           <div class="hscroll grow" style="margin:0;padding:2px 0 4px">
             <button class="chip ${cat === "all" ? "on" : ""}" data-cat="all">${icon("grid")}Sab</button>
@@ -407,10 +407,10 @@
       <div class="ordertype"><div class="seg">${types.map(([k, ic, lb]) => `<button data-type="${k}" class="${checkout.type === k ? "on" : ""}">${icon(ic)}${lb}</button>`).join("")}</div></div>
       <div class="card pad" style="margin-top:12px">
         ${checkout.type === "dinein" ? `<label class="field" style="margin-top:0"><span>${t("table")}</span><input class="input" id="ctable" inputmode="numeric" maxlength="4" placeholder="Jaise 4" value="${esc(checkout.table)}"></label><div class="help">${icon("qr")}Table pe laga QR scan kiya ho toh number apne aap aa jaata hai</div>` : ""}
-        ${checkout.type === "delivery" ? `<label class="field" style="margin-top:0"><span>${t("address")}</span><textarea class="input" id="caddr" rows="3" placeholder="Ghar / gali / landmark, Govindpur">${esc(checkout.address || (user && user.address) || "")}</textarea></label><div class="help">${icon("truck")}${esc(CFG.delivery.area || "")}${CFG.delivery.minOrder ? ` · Minimum ${rupee(CFG.delivery.minOrder)}` : ""}${CFG.delivery.freeAbove ? ` · ${rupee(CFG.delivery.freeAbove)}+ pe free delivery` : ""}</div>` : ""}
+        ${checkout.type === "delivery" ? `<label class="field" style="margin-top:0"><span>${t("address")}</span><textarea class="input" id="caddr" rows="3" placeholder="Ghar / gali / landmark">${esc(checkout.address || (user && user.address) || "")}</textarea></label><div class="help">${icon("truck")}${esc(CFG.delivery.area || "")}${CFG.delivery.minOrder ? ` · Minimum ${rupee(CFG.delivery.minOrder)}` : ""}${CFG.delivery.freeAbove ? ` · ${rupee(CFG.delivery.freeAbove)}+ pe free delivery` : ""}</div>` : ""}
         ${checkout.type === "takeaway" ? `<div class="row" style="gap:12px"><span class="lic" style="width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--bg2)">${icon("store")}</span><div class="grow"><b style="font-size:14px">Counter se pickup</b><div class="small muted">${esc(CFG.address)}</div></div></div>` : ""}
         <label class="field"><span>Note</span><textarea class="input" id="cnotes" rows="2" placeholder="${esc(t("notes"))}">${esc(checkout.notes)}</textarea></label>
-        <label class="field"><span>${t("coupon")}</span><div class="row" style="gap:8px"><input class="input grow ${b.cpErr ? "err" : ""}" id="ccoupon" placeholder="KANAK10" value="${esc(checkout.coupon)}" style="text-transform:uppercase"><button class="btn sm ghost" data-act="coupon" style="height:50px">${t("apply")}</button></div></label>
+        <label class="field"><span>${t("coupon")}</span><div class="row" style="gap:8px"><input class="input grow ${b.cpErr ? "err" : ""}" id="ccoupon" placeholder="${esc(((CFG.coupons || [])[0] || {}).code || "CODE10")}" value="${esc(checkout.coupon)}" style="text-transform:uppercase"><button class="btn sm ghost" data-act="coupon" style="height:50px">${t("apply")}</button></div></label>
         ${b.cpErr ? `<div class="help" style="color:var(--bad)">${icon("info")}${esc(b.cpErr)}</div>` : b.cpOk ? `<div class="help" style="color:var(--ok)">${icon("check")}Coupon laga · ${rupee(b.disc)} bachaye</div>` : (CFG.coupons || []).filter((k) => k.on !== false).length ? `<div class="help">${icon("tag")}Codes: ${(CFG.coupons || []).filter((k) => k.on !== false).map((k) => esc(k.code)).join(", ")}</div>` : ""}
       </div>
       <div class="card pad bill" style="margin-top:12px">
@@ -638,7 +638,7 @@
       <div class="grid2" style="margin-top:14px"><button class="btn ghost" id="qrdl">${icon("download", "sm")}Download</button><button class="btn" id="qrpr">${icon("note", "sm")}Print</button></div>`, (sh) => {
       draw(sh);
       $("#qrt", sh).oninput = (e) => { table = e.target.value.replace(/\D/g, ""); draw(sh); };
-      $("#qrdl", sh).onclick = () => { const svg = $(".qrbox svg", sh); if (!svg) return; const blob = new Blob([svg.outerHTML], { type: "image/svg+xml" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `kanak-qr${table ? "-table-" + table : ""}.svg`; a.click(); };
+      $("#qrdl", sh).onclick = () => { const svg = $(".qrbox svg", sh); if (!svg) return; const blob = new Blob([svg.outerHTML], { type: "image/svg+xml" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `${KEY}-qr${table ? "-table-" + table : ""}.svg`; a.click(); };
       $("#qrpr", sh).onclick = () => { const w = window.open("", "_blank"); if (!w) return toast("Popup allow karo", "info"); w.document.write(`<html><head><title>QR</title></head><body style="font-family:Georgia,serif;text-align:center;padding:40px"><h1 style="margin:0">${esc(CFG.name)}</h1><p style="font-family:sans-serif">Scan karo · Menu dekho · Order karo${table ? " · Table " + table : ""}</p><div style="width:320px;margin:20px auto">${$(".qrbox", sh).innerHTML}</div><p style="font-family:sans-serif;font-size:13px">${esc(fmtPhone(CFG.phone))}</p></body></html>`); w.document.close(); setTimeout(() => w.print(), 400); };
     });
   }
@@ -646,8 +646,7 @@
     openSheet(`<div class="row" style="gap:14px;margin-bottom:14px"><img src="img/logo.webp" alt="" style="width:60px;height:60px;border-radius:18px;object-fit:cover"><div><h3 style="margin:0">${esc(CFG.name)}</h3><div class="small muted">${esc(CFG.tagline)}</div></div></div>
       <div class="card pad">
         <div class="kv"><span>Timing</span><span>${fmt12(CFG.open)} – ${fmt12(CFG.close)}</span></div>
-        <div class="kv"><span>Rating</span><span>${esc(S.rating)} · ${esc(S.reviews)} reviews</span></div>
-        <div class="kv"><span>Price</span><span>${esc(S.priceRange)}</span></div>
+        ${S.rating ? `<div class="kv"><span>Rating</span><span>${esc(S.rating)} · ${esc(S.reviews)} reviews</span></div>` : ""}${S.priceRange ? `<div class="kv"><span>Price</span><span>${esc(S.priceRange)}</span></div>` : ""}
         <div class="kv"><span>Services</span><span style="text-align:right">${(S.services || []).map(esc).join(", ")}</span></div>
         <div class="kv"><span>Address</span><span style="text-align:right;max-width:62%">${esc(CFG.address)}</span></div>
       </div>
@@ -923,7 +922,7 @@
   function editCoupon(i) {
     const isNew = i === "new"; const k = isNew ? { code: "", type: "pct", value: 10, max: 50, min: 199, on: true } : clone(CFG.coupons[i]);
     openSheet(`<h3>${isNew ? "Naya coupon" : "Coupon edit"}</h3>
-      <label class="field"><span>Code</span><input class="input" id="kc" value="${esc(k.code)}" maxlength="20" style="text-transform:uppercase" placeholder="KANAK10"></label>
+      <label class="field"><span>Code</span><input class="input" id="kc" value="${esc(k.code)}" maxlength="20" style="text-transform:uppercase" placeholder="SAVE10"></label>
       <div class="field"><span>Type</span><div class="seg"><button type="button" data-kt="pct" class="${k.type === "pct" ? "on" : ""}">% off</button><button type="button" data-kt="flat" class="${k.type === "flat" ? "on" : ""}">₹ off</button></div></div>
       <div class="grid2"><label class="field"><span>Value</span><input class="input" id="kv" inputmode="numeric" value="${esc(k.value)}"></label><label class="field"><span>Max discount ₹</span><input class="input" id="km" inputmode="numeric" value="${esc(k.max || "")}" placeholder="0 = koi limit nahi"></label></div>
       <label class="field"><span>Minimum order ₹</span><input class="input" id="kn" inputmode="numeric" value="${esc(k.min || "")}"></label>
@@ -960,7 +959,7 @@
         </div>
         <div class="grid2"><label class="field"><span>Delivery charge ₹</span><input class="input" id="tdf" inputmode="numeric" value="${esc(d.fee)}"></label><label class="field"><span>Free delivery ₹ se upar</span><input class="input" id="tdfa" inputmode="numeric" value="${esc(d.freeAbove || "")}" placeholder="0 = kabhi nahi"></label></div>
         <label class="field"><span>Minimum order (delivery) ₹</span><input class="input" id="tdm" inputmode="numeric" value="${esc(d.minOrder || "")}"></label>
-        <label class="field"><span>Delivery area</span><input class="input" id="tda" maxlength="160" value="${esc(d.area)}" placeholder="Jaise Govindpur 3 km tak"></label>
+        <label class="field"><span>Delivery area</span><input class="input" id="tda" maxlength="160" value="${esc(d.area)}" placeholder="Jaise 3 km tak"></label>
       </div>
       <button class="btn block" style="margin-top:16px" data-act="savetiming">${icon("check", "sm")}Save karo</button>`;
     $$("[data-ov]", box).forEach((b) => (b.onclick = () => { $$("[data-ov]", box).forEach((x) => x.classList.toggle("on", x === b)); }));
@@ -1045,7 +1044,7 @@
     if ((el = a("[data-cq]"))) { const [k, d] = el.dataset.cq.split("|"); changeQty(k, Number(d)); render({ keepScroll: true, quiet: true }); return; }
     if ((el = a("[data-open]"))) { openItem(el.dataset.open); return; }
     if ((el = a("[data-cat]"))) { const c = el.dataset.cat; history.replaceState(null, "", c === "all" ? "#/menu" : "#/menu?cat=" + encodeURIComponent(c)); current.params = c === "all" ? {} : { cat: c }; $$(".menutools .chip").forEach((x) => x.classList.toggle("on", x === el)); drawMenuList(c); el.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
-    if ((el = a("[data-offer]"))) { const o = (CFG.offers || []).find((x) => x.id === el.dataset.offer); if (!o) return; if (o.itemId && item(o.itemId)) return openItem(o.itemId); if (o.cat) return go("#/menu?cat=" + encodeURIComponent(o.cat)); if (/KANAK|code/i.test(o.title)) { const m = o.title.match(/[A-Z]{3,}\d+/); if (m) { checkout.coupon = m[0]; saveCheckout(); toast(`Coupon ${m[0]} cart mein lag jayega`, "tag"); } } return go("#/menu"); }
+    if ((el = a("[data-offer]"))) { const o = (CFG.offers || []).find((x) => x.id === el.dataset.offer); if (!o) return; if (o.itemId && item(o.itemId)) return openItem(o.itemId); if (o.cat) return go("#/menu?cat=" + encodeURIComponent(o.cat)); { const m = String(o.title + " " + o.sub).match(/\b[A-Z]{3,}\d+\b/); if (m) { checkout.coupon = m[0]; saveCheckout(); toast(`Coupon ${m[0]} cart mein lag jayega`, "tag"); } } return go("#/menu"); }
     if ((el = a("[data-photo]"))) { openSheet(`<div style="margin:-10px -20px 0;border-radius:28px 28px 0 0;overflow:hidden"><img src="${esc(imgSrc(el.dataset.photo))}" alt="" style="width:100%;max-height:70vh;object-fit:cover"></div>`); return; }
     if ((el = a("[data-type]"))) { checkout.type = el.dataset.type; saveCheckout(); render({ keepScroll: true, quiet: true }); return; }
     if ((el = a("[data-settheme]"))) { prefs.theme = el.dataset.settheme; LS.set("prefs", prefs); applyTheme(); render({ keepScroll: true, quiet: true }); return; }
