@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>UPI Payment — Misbah Raza</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0d10;color:#eef1f5;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.c{max-width:420px;margin:24px auto;padding:20px;border:1px solid #232830;border-radius:16px;background:#12151a;text-align:center}
+h1{font-size:18px;margin:0 0 4px}.m{color:#8b94a3;font-size:13px}.amt{font-size:34px;font-weight:700;color:#d6b56c;margin:10px 0}
+#qr{background:#fff;border-radius:12px;padding:12px;width:240px;height:240px;margin:14px auto}#qr svg{width:100%;height:100%}
+.btn{display:block;background:#d6b56c;color:#15120a;border-radius:12px;padding:13px;font-weight:700;text-decoration:none;margin-top:12px}
+.btn.g{background:transparent;color:#eef1f5;border:1px solid #232830}.btn:focus-visible{outline:2px solid #d6b56c;outline-offset:2px}
+.n{font-size:12px;color:#8b94a3;margin-top:14px}.err{color:#e46a6a}
+</style>
+</head>
+<body>
+<div class="c" id="c">
+  <h1 id="pn">UPI Payment</h1><div class="m" id="tn"></div>
+  <div class="amt" id="am"></div>
+  <div id="qr" aria-label="UPI QR code"></div>
+  <a class="btn" id="pay" href="#">UPI app se pay karein</a>
+  <button class="btn g" id="copy" type="button" style="width:100%;font:inherit">UPI ID copy karein</button>
+  <p class="n">Kisi bhi UPI app (GPay, PhonePe, Paytm) se scan karein. Payment ke baad screenshot Misbah ko WhatsApp karein — Misbah confirm karke kaam shuru karenge.</p>
+</div>
+<script src="../vendor/qrcode.js"></script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search),pa=(q.get("pa")||"").trim(),pn=q.get("pn")||"Misbah Raza",am=Number(q.get("am")||0),tn=q.get("tn")||"";
+  var ok=/^[a-zA-Z0-9._-]{2,256}@[a-zA-Z][a-zA-Z0-9.-]{1,63}$/.test(pa)&&am>0&&am<=200000;
+  if(!ok){document.getElementById("c").innerHTML='<p class="err">Payment link adhoora hai. Misbah se naya link maangiye.</p>';return}
+  var link="upi://pay?pa="+encodeURIComponent(pa)+"&pn="+encodeURIComponent(pn)+"&am="+am.toFixed(2)+"&cu=INR"+(tn?"&tn="+encodeURIComponent(tn.slice(0,60)):"");
+  document.getElementById("pn").textContent=pn;document.getElementById("tn").textContent=tn;document.getElementById("am").textContent="₹"+am.toLocaleString("en-IN");
+  document.getElementById("pay").href=link;
+  try{var qr=qrcode(0,"M");qr.addData(link);qr.make();document.getElementById("qr").innerHTML=qr.createSvgTag({cellSize:5,margin:1,scalable:true})}catch(e){}
+  document.getElementById("copy").onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(pa):Promise.reject()).then(function(){document.getElementById("copy").textContent="Copied: "+pa},function(){prompt("UPI ID",pa)})};
+})();
+</script>
+</body>
+</html>
