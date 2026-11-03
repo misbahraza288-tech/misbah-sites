@@ -54,7 +54,7 @@ window.APP_STATIC = {
     "menu-cover"
   ],
   "api": "https://misbah-digital-computer.misbahbuilds123.workers.dev/api/kanak",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "madeBy": "Misbah Digital",
   "madeByWhatsapp": "917488484114",
   "storageKey": "kanak3",

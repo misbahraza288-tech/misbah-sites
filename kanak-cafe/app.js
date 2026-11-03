@@ -292,7 +292,7 @@
   // =============== 2. MENU ===============
   let menuQ = "";
   SCREENS.menu = (el, params) => {
-    titleBar(t("menu"), `${visibleItems().length} dishes · Half & Full`, `<button class="iconbtn" data-act="vegtoggle" aria-label="Veg">${icon("leaf")}</button>`);
+    titleBar(t("menu"), `${visibleItems().length} dishes${visibleItems().some(hasHF) ? " · Half & Full" : ""}`, `<button class="iconbtn" data-act="vegtoggle" aria-label="Veg">${icon("leaf")}</button>`);
     const cat = params.cat || "all";
     el.innerHTML = `<div class="menutools">
         <label class="searchbar">${icon("search")}<input id="q" type="search" placeholder="${esc(S.searchHint || t("search"))}" value="${esc(menuQ)}" autocomplete="off" enterkeyhint="search"></label>
