@@ -18,12 +18,47 @@
     wallet: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 12h3M3 9h18"/>', today: '<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/>',
     check: '<path d="M5 12l4 4 10-10"/>', team: '<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c2.8.3 5 2.6 5 5.5"/>',
     pipe: '<path d="M4 6h16l-6 7v6l-4-2v-4z"/>', list: '<path d="M9 6h11M9 12h11M9 18h11M4 6h1M4 12h1M4 18h1"/>', pulse: '<path d="M3 12h4l3-7 4 14 3-7h4"/>',
-    chat: '<path d="M4 5h16v11H8l-4 4z"/>', play: '<path d="M7 5l12 7-12 7z"/>', pause: '<path d="M8 5v14M16 5v14"/>', ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'
+    chat: '<path d="M4 5h16v11H8l-4 4z"/>', brain: '<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h1V4z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h-1V4z"/>',
+    search: '<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>', memory: '<path d="M6 4h12v16l-6-4-6 4z"/>', play: '<path d="M7 5l12 7-12 7z"/>', pause: '<path d="M8 5v14M16 5v14"/>', ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'
   };
   var icon = function (n) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (I[n] || I.list) + "</svg>"; };
   var ago = function (iso) { if (!iso) return ""; var s = (Date.now() - new Date(iso)) / 1000; if (s < 60) return "abhi"; if (s < 3600) return Math.floor(s / 60) + " min"; if (s < 86400) return Math.floor(s / 3600) + " ghante"; return Math.floor(s / 86400) + " din"; };
   var fmt = function (iso) { return iso ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }) : "—"; };
   var BOTS = { father: "Father Bot", trend: "Trend Scout", idea: "Idea Maker", lead: "Lead Hunter", sales: "Sales Writer", designer: "Designer", coder: "Coder", content: "Content Maker", mxa: "Mxa Growth", qa: "QA", finance: "Finance", misbah: "Misbah" };
+  var TST = { done: ["ok", "Ho gaya"], waiting_misbah: ["acc", "Tumhara approval"], queued: ["", "Agli baar"], failed: ["bad", "Fail"], qa_blocked: ["bad", "QA ne roka"] };
+  var VER = { ok: ["ok", "ok"], risky: ["warn", "risky"], reject: ["bad", "reject"] };
+  function bar(n) { n = Math.max(0, Math.min(100, Number(n) || 0)); return '<span class="bar" role="img" aria-label="Score ' + n + ' / 100"><i style="width:' + n + '%"></i></span>'; }
+  function thinkHtml(d) {
+    var t = d.think, mem = d.memory || {}, ms = mem.stats || {};
+    var head = '<section class="card span12 think" id="think"><h2>' + icon("brain") + "Team ki soch" + '<span class="r mut">' + (t ? fmt(t.at) + (t.dry_run ? " · test" : "") : "") + "</span></h2>";
+    var btn = '<div class="acts" style="margin-top:12px"><button class="btn primary sm" data-act="think">' + icon("brain") + "Abhi socho (/think)</button></div>";
+    if (!t) return head + '<p class="empty">Abhi team ne nahi socha. Roz 7:30 AM meeting me, ya Telegram pe /think.</p>' + btn + "</section>";
+    var h = [head];
+    h.push('<div class="plan"><small>AAJ KA PLAN</small><p>' + esc(t.aaj_ka_plan || t.summary || "") + "</p></div>");
+    h.push('<div class="plans">' + (t.plans || []).map(function (p) {
+      var tasks = (t.assignments || []).filter(function (a) { return a.plan === p.id; });
+      return '<article class="pl"><div class="plh"><span class="rk">' + p.rank + '</span><div class="grow"><b>' + esc(p.title) + '</b><p class="mut small">' + esc(BOTS[p.bot] || p.bot) + " ka idea · " + esc(p.price_label || "") + "</p></div><span class=\"sc\">" + p.score + "</span></div>" + bar(p.score) +
+        (p.why ? '<p class="small" style="margin:8px 0 6px">' + esc(p.why) + "</p>" : "") + '<ul class="tl">' + tasks.map(function (a) {
+          var s = TST[a.status] || ["", a.status];
+          return '<li><div class="tlh"><span class="tag">' + esc(BOTS[a.bot] || a.bot) + '</span><span class="tag ' + s[0] + '">' + esc(s[1]) + "</span></div><b>" + esc(a.title) + "</b>" + (a.result ? "<p>" + esc(a.result) + "</p>" : "") +
+            ((a.links || []).length ? '<p class="lk">' + a.links.map(function (x) { return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + icon("ext") + esc(x.label) + "</a>"; }).join("") + "</p>" : "") +
+            (a.text ? '<details><summary>Draft dekho</summary><div class="pitch">' + esc(a.text) + "</div></details>" : "") + "</li>"; }).join("") + "</ul></article>";
+    }).join("") + "</div>");
+    var props = (t.proposals || []);
+    h.push('<details class="deb"' + (props.length <= 6 ? " open" : "") + '><summary>' + icon("bulb") + "Saare ideas jo debate hue · " + props.length + "</summary><ul class=\"list\">" + props.map(function (p) {
+      var sc = p.scores || {};
+      return '<li class="row"><div class="grow"><b>' + esc(p.title) + (p.chosen ? ' <span class="tag acc">Chuna gaya</span>' : "") + (p.blocked ? ' <span class="tag bad">Roka</span>' : "") + '</b><p>' + esc(BOTS[p.bot] || p.bot) + " · " + esc(p.target || "") + " · " + esc(p.price_label || "") + " · effort " + esc(p.effort || "") + "</p>" +
+        '<p class="mut small">Paisa ' + (sc.money || "-") + " · Speed " + (sc.speed || "-") + " · Aasaan " + (sc.effort || "-") + " · Safe " + (sc.risk || "-") + "</p>" +
+        ((p.critiques || []).length ? '<p class="cr">' + p.critiques.map(function (c) { var v = VER[c.verdict] || ["", c.verdict]; return '<span class="tag ' + v[0] + '">' + esc(BOTS[c.by] || c.by) + ": " + esc(v[1]) + "</span>" + (c.note ? '<span class="small">' + esc(c.note) + "</span>" : ""); }).join("") + "</p>" : "") +
+        '</div><span class="sc sm">' + (p.score || 0) + "</span></li>"; }).join("") + "</ul></details>");
+    var pr = d.prospects || [];
+    h.push('<div class="sub"><h3>' + icon("search") + "Research leads · verify karo</h3>" + (pr.length ? '<ul class="list">' + pr.slice(0, 8).map(function (x) {
+      return '<li class="row"><div class="grow"><b>' + esc(x.name) + '</b><p>' + esc(x.city) + (x.type ? " · " + esc(x.type) : "") + (x.gap ? " · " + esc(x.gap) : "") + '</p><p class="small"><a href="' + esc(x.source_url) + '" target="_blank" rel="noopener">Source: ' + esc(x.source_domain || "link") + "</a> · pitch " + (x.lang === "english" ? "English" : "Hinglish") + "</p></div></li>"; }).join("") + "</ul>" : '<p class="empty">Is baar search me pakka source wala business nahi mila — bots kuch banate nahi.</p>') + "</div>");
+    h.push('<div class="sub"><h3>' + icon("memory") + "Team ki yaaddasht</h3>" + '<div class="chips"><span>Pitch bheje ' + (ms.pitched || 0) + "</span><span>Chhode " + (ms.skipped || 0) + "</span><span>Deals " + (ms.deals || 0) + "</span><span>Advance " + (ms.advances || 0) + "</span><span>Asli kamai " + rs(ms.received || 0) + "</span></div>" +
+      ((mem.lessons || []).concat(mem.notes || []).length ? '<ul class="list">' + (mem.notes || []).slice(0, 3).map(function (n) { return '<li class="row"><div class="grow"><p><span class="tag">Tumhara note</span> ' + esc(n.text) + "</p></div></li>"; }).join("") + (mem.lessons || []).slice(0, 4).map(function (n) { return '<li class="row"><div class="grow"><p><span class="tag">Sabak</span> ' + esc(n.text) + "</p></div></li>"; }).join("") + "</ul>" : '<p class="empty">Jaise jaise tum ✅/❌/💰 dabaoge aur /learn likhoge, team seekhegi.</p>') + "</div>");
+    h.push('<p class="note">Bots khud sirf research, demo, draft banate hain. Kisi bhi insaan ko message/post sirf tumhare ✅ se. Price sab estimate — kamai ki koi guarantee nahi.</p>' + btn + "</section>");
+    return h.join("");
+  }
   var STAGE = { found: "Found", drafted: "Draft ready", pitched: "Pitched", talking: "Chat chal rahi", deal: "Deal fix", advance_paid: "Advance paid", delivering: "Ban raha", ready: "Ready (QA ok)", delivered: "Delivered", done: "Done", skipped: "Chhoda", lost: "Lost" };
 
   function toast(m) { var t = $("#toast"); t.textContent = m; t.style.display = "block"; clearTimeout(toast.t); toast.t = setTimeout(function () { t.style.display = "none"; }, 4200); }
@@ -32,7 +67,7 @@
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) { var e = new Error(j.error || ("HTTP " + r.status)); e.status = r.status; throw e; } return j; }); });
   }
 
-  var SECTIONS = [["today", "Today", "today"], ["approvals", "Approvals", "check"], ["team", "Team", "team"], ["pipeline", "Leads", "pipe"], ["money", "Money", "wallet"], ["ideas", "Ideas", "bulb"], ["tasks", "Tasks", "list"], ["activity", "Activity", "pulse"], ["mxa", "Mxa growth", "rocket"]];
+  var SECTIONS = [["today", "Today", "today"], ["think", "Soch", "brain"], ["approvals", "Approvals", "check"], ["team", "Team", "team"], ["pipeline", "Leads", "pipe"], ["money", "Money", "wallet"], ["ideas", "Ideas", "bulb"], ["tasks", "Tasks", "list"], ["activity", "Activity", "pulse"], ["mxa", "Mxa growth", "rocket"]];
   function nav() {
     $("#tabs").innerHTML = SECTIONS.map(function (s) { var n = s[0] === "approvals" && D && D.approvals.length ? ' <span class="n">' + D.approvals.length + "</span>" : ""; return '<a href="#' + s[0] + '">' + icon(s[2]) + "<span>" + s[1] + "</span>" + n + "</a>"; }).join("");
   }
@@ -59,6 +94,8 @@
       '<div class="kpi"><small>Advance pending</small><b>' + rs(mo.pendingAdvance) + '</b></div><div class="kpi est"><small>Estimate (kamai nahi)</small><b>' + rs(mo.estimatePipeline) + "</b></div></div>" +
       '<p class="note">Received me sirf wo paisa jo tumne [Paisa aa gaya] dabake confirm kiya. Estimate = bheje gaye quotes, abhi kamai nahi. Koi guarantee nahi.</p>' +
       ((d.payments || []).length ? '<ul class="list" style="margin-top:10px">' + d.payments.slice(0, 6).map(function (p) { return '<li class="row"><div class="grow"><b>' + rs(p.amount) + " · " + esc(p.client) + "</b><p>" + esc(p.kind) + " · " + fmt(p.at) + "</p></div></li>"; }).join("") + "</ul>" : '<p class="empty">Abhi koi payment nahi aayi.</p>') + "</section>");
+    // Team ki soch (Think Tank)
+    h.push(thinkHtml(d));
     // Approvals
     h.push('<section class="card span12" id="approvals"><h2>' + icon("check") + 'Approvals waiting<span class="r mut">' + d.approvals.length + "</span></h2>" + (d.approvals.length ? d.approvals.map(apprHtml).join("") : '<p class="empty">Kuch approve karna baaki nahi.</p>') +
       '<p class="note">✅ Bhejo dabane pe WhatsApp link khulta hai — message tum khud Send karte ho. Bot kisi ko automatic message nahi karta. Din me max ' + d.max_outreach + " pitch.</p></section>");
@@ -100,12 +137,13 @@
     if (act === "editbox") { var eb = $("#eb-" + id); eb.hidden = !eb.hidden; return; }
     if (window.HQ_FIXTURE) { toast("Preview mode — asli action nahi hua"); return; }
     var body = { action: act, lead_id: id };
+    if (act === "think" && !confirm("Team abhi soche? (3-5 min, Gemini free calls)")) return;
     if (act === "edit") body.text = $("#eb-" + id + " textarea").value;
     if (act === "paid" || act === "final") { body.amount = Number(($("#amt-" + id) || {}).value || 0); if (!confirm("Pakka " + rs(body.amount) + " tumhare account me aa gaya?")) return; }
     if (act === "skip" && !confirm("Is lead ko chhod dein?")) return;
     b.disabled = true;
     api("/api/hq/action", body).then(function (r) {
-      toast(r.text ? r.text.split("\n")[0] : "Ho gaya");
+      toast(act === "think" ? "Team soch rahi hai — 3-5 min me yahan + Telegram pe" : (r.text ? r.text.split("\n")[0] : "Ho gaya"));
       return load().then(function () { if (r.link) linkBar(r.link); });
     }).catch(function (err) { b.disabled = false; toast("Error: " + err.message); });
   });
