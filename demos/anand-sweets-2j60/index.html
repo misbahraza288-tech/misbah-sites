@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Anand Sweets — Demo by QENLYX</title>
+<meta name="description" content="Anand Sweets, Bengaluru — online menu & order">
+<meta name="theme-color" content="#2a1b22">
+<style>
+:root{--a:#e9a9b8;--d:#2a1b22;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html,body{margin:0}body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--d);color:var(--ink)}
+svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.demo-bar{background:#111;color:#ddd;font-size:12px;padding:8px 16px;text-align:center;border-bottom:1px solid var(--line)}
+header{padding:28px 18px 18px;max-width:720px;margin:auto}
+.mark{width:52px;height:52px;border-radius:14px;background:var(--a);color:var(--d);display:grid;place-items:center;font:700 22px/1 Georgia,serif;margin-bottom:14px}
+h1{font:600 30px/1.15 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0 0 14px}.meta{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--mut);font-size:13px}.meta span{display:flex;gap:6px;align-items:center}
+.meta svg{color:var(--a)}
+main{max-width:720px;margin:auto;padding:0 18px 120px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:6px 0 14px;scrollbar-width:none}.chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:13px}
+.chip.on{background:var(--a);color:var(--d);border-color:var(--a);font-weight:600}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.item{display:grid;grid-template-columns:56px 1fr auto auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
+.thumb{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--a),transparent 70%),rgba(255,255,255,.06)}
+.t1{background:radial-gradient(circle at 30% 30%,var(--a),transparent 60%),rgba(255,255,255,.06)}.t2{background:linear-gradient(200deg,var(--a),transparent 65%),rgba(255,255,255,.08)}
+.t3{background:conic-gradient(from 90deg,var(--a),transparent,var(--a)),rgba(255,255,255,.05)}.t4{background:radial-gradient(circle at 70% 60%,var(--a),transparent 55%),rgba(255,255,255,.06)}.t5{background:linear-gradient(90deg,var(--a),transparent),rgba(255,255,255,.05)}
+.info b{display:block;font-weight:600}.info small{color:var(--mut);font-size:11px}.price{font-weight:600}
+.add{width:34px;height:34px;border-radius:10px;border:1px solid var(--a);background:transparent;color:var(--a);font-size:20px;line-height:1}
+.add:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+h2{font:600 18px/1.3 Georgia,serif;margin:26px 0 10px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:10px}.feat div{border:1px solid var(--line);border-radius:14px;padding:12px;font-size:13px;color:var(--mut)}.feat b{display:flex;gap:8px;align-items:center;color:var(--ink);margin-bottom:4px}
+.feat svg{color:var(--a)}
+.btn{display:flex;gap:8px;align-items:center;justify-content:center;padding:13px 16px;border-radius:12px;font-weight:600;text-decoration:none;border:0;font:inherit;cursor:pointer}
+.btn.main{background:var(--a);color:var(--d)}.btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent;margin-top:10px}
+.cart{position:fixed;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(10,10,10,.92);border-top:1px solid var(--line)}
+.cart .row{max-width:720px;margin:auto;display:flex;gap:12px;align-items:center}.cart .sum{flex:1;font-size:13px;color:var(--mut)}.cart .sum b{color:var(--ink);font-size:16px;display:block}
+.toast{position:fixed;inset:auto 18px 90px;max-width:684px;margin:auto;background:#fff;color:#111;border-radius:14px;padding:14px 16px;font-size:14px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-size:12px}
+@media(min-width:720px){h1{font-size:38px}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo preview — Anand Sweets ke liye QENLYX ne banaya. Photos/items sample hain; asli menu aapse lenge.</div>
+<header>
+  <div class="mark" aria-hidden="true">A</div>
+  <h1>Anand Sweets</h1>
+  <p class="sub">Har khushi ka cake, ek tap mein order</p>
+  <div class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Bengaluru</span></div>
+</header>
+<main>
+  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Birthday cakes</button><button class="chip" type="button">Pastries</button><button class="chip" type="button">Custom cake</button><button class="chip" type="button">Party orders</button></div>
+  <ul>
+      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>Black Forest (1/2 kg)</b><small>Sample item</small></div>
+        <span class="price">₹450</span><button class="add" type="button" data-name="Black Forest (1/2 kg)" data-price="450" aria-label="Add Black Forest (1/2 kg)">+</button></li>
+      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Pineapple (1/2 kg)</b><small>Sample item</small></div>
+        <span class="price">₹400</span><button class="add" type="button" data-name="Pineapple (1/2 kg)" data-price="400" aria-label="Add Pineapple (1/2 kg)">+</button></li>
+      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Chocolate Truffle (1/2 kg)</b><small>Sample item</small></div>
+        <span class="price">₹550</span><button class="add" type="button" data-name="Chocolate Truffle (1/2 kg)" data-price="550" aria-label="Add Chocolate Truffle (1/2 kg)">+</button></li>
+      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Photo Cake (1 kg)</b><small>Sample item</small></div>
+        <span class="price">₹1100</span><button class="add" type="button" data-name="Photo Cake (1 kg)" data-price="1100" aria-label="Add Photo Cake (1 kg)">+</button></li>
+      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Pastry (1 pc)</b><small>Sample item</small></div>
+        <span class="price">₹60</span><button class="add" type="button" data-name="Pastry (1 pc)" data-price="60" aria-label="Add Pastry (1 pc)">+</button></li>
+      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Cupcake box (6)</b><small>Sample item</small></div>
+        <span class="price">₹300</span><button class="add" type="button" data-name="Cupcake box (6)" data-price="300" aria-label="Add Cupcake box (6)">+</button></li></ul>
+  <h2>Isme kya milega</h2>
+  <div class="feat">
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Seedha order</b>Customer menu dekh ke order kare, aapke WhatsApp pe aaye. Koi commission nahi.</div>
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2"/></svg>QR code</b>Counter/table pe QR — scan karte hi menu.</div>
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Rate badlo</b>Owner panel (PIN) se rate/item khud badlo.</div>
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Aapka brand</b>Aapka naam, logo, rang — Zomato jaisa nahi, aapka apna.</div>
+  </div>
+  <a class="btn ghost" href="https://misbahraza288-tech.github.io/misbah-sites/hq/talk/?l=em-702j60&amp;t=sksk2qtkz6d4vcat2e"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Sawaal poochein (AI assistant)</span></a>
+</main>
+<footer>Demo by Misbah Raza · QENLYX, Govindpur. Ye sirf preview hai — koi order kahin nahi jaata.</footer>
+<div class="cart"><div class="row"><div class="sum"><span id="cnt">0 item</span><b id="tot">₹0</b></div><button class="btn main" id="order" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>WhatsApp pe order</span></button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){var c=[],tot=0,T=document.getElementById('toast');function say(m){T.textContent=m;T.style.display='block';clearTimeout(say.t);say.t=setTimeout(function(){T.style.display='none'},3800)}
+document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){c.push(b.dataset.name);tot+=Number(b.dataset.price)||0;document.getElementById('cnt').textContent=c.length+' item';document.getElementById('tot').textContent='₹'+tot})});
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+var WA="",NM="Anand Sweets";document.getElementById('order').addEventListener('click',function(){if(!c.length){say('Pehle koi item add karo (+)');return}
+if(!WA){say('Demo: asli app mein ye order seedha '+NM+' ke WhatsApp pe jaayega — naam, items aur total ke saath.');return}
+location.href=WA+'?text='+encodeURIComponent('Order: '+c.join(', ')+' | Total ₹'+tot)});})();
+</script>
+</body>
+</html>
