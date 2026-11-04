@@ -6,9 +6,9 @@
 <meta name="robots" content="noindex">
 <title>Flurys — Demo by QENLYX</title>
 <meta name="description" content="Flurys, Kolkata — online menu & order">
-<meta name="theme-color" content="#2a1b22">
+<meta name="theme-color" content="#1a1411">
 <style>
-:root{--a:#e9a9b8;--d:#2a1b22;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
+:root{--a:#e8c38f;--d:#1a1411;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box}html,body{margin:0}body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--d);color:var(--ink)}
 svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .demo-bar{background:#111;color:#ddd;font-size:12px;padding:8px 16px;text-align:center;border-bottom:1px solid var(--line)}
@@ -38,6 +38,11 @@ h2{font:600 18px/1.3 Georgia,serif;margin:26px 0 10px}
 .toast{position:fixed;inset:auto 18px 90px;max-width:684px;margin:auto;background:#fff;color:#111;border-radius:14px;padding:14px 16px;font-size:14px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-size:12px}
 @media(min-width:720px){h1{font-size:38px}}
+.plan{margin-top:26px;border:1px solid var(--line);border-radius:16px;padding:16px;background:rgba(255,255,255,.03)}.plan h2{margin-top:0}.plan h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;font-weight:600}
+.cz{color:var(--mut);margin:-4px 0 0;font-size:13px}.nd{display:grid;gap:6px}.nd li{position:relative;padding-left:16px;font-size:14px}.nd li:before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--a)}
+.st{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}.st li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:2px 10px}.st li:before{content:counter(s);grid-row:span 2;width:24px;height:24px;border-radius:8px;border:1px solid var(--a);color:var(--a);display:grid;place-items:center;font-size:12px;font-weight:700}.st b{font-size:14px}.st span{color:var(--mut);font-size:13px}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.est div{border:1px solid var(--line);border-radius:12px;padding:10px}.est small{display:block;color:var(--mut);font-size:11px}.est b{font-size:20px;color:var(--a)}
+.fine{color:var(--mut);font-size:12px;margin-top:12px}
 </style>
 </head>
 <body>
@@ -45,24 +50,24 @@ footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-s
 <header>
   <div class="mark" aria-hidden="true">F</div>
   <h1>Flurys</h1>
-  <p class="sub">Har khushi ka cake, ek tap mein order</p>
+  <p class="sub">Park Street ka breakfast — order aur table booking</p>
   <div class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Kolkata</span></div>
 </header>
 <main>
-  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Birthday cakes</button><button class="chip" type="button">Pastries</button><button class="chip" type="button">Custom cake</button><button class="chip" type="button">Party orders</button></div>
+  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Breakfast</button><button class="chip" type="button">Pastries</button><button class="chip" type="button">Cakes</button><button class="chip" type="button">Tea</button></div>
   <ul>
-      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>Black Forest (1/2 kg)</b><small>Sample item</small></div>
-        <span class="price">₹450</span><button class="add" type="button" data-name="Black Forest (1/2 kg)" data-price="450" aria-label="Add Black Forest (1/2 kg)">+</button></li>
-      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Pineapple (1/2 kg)</b><small>Sample item</small></div>
-        <span class="price">₹400</span><button class="add" type="button" data-name="Pineapple (1/2 kg)" data-price="400" aria-label="Add Pineapple (1/2 kg)">+</button></li>
-      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Chocolate Truffle (1/2 kg)</b><small>Sample item</small></div>
-        <span class="price">₹550</span><button class="add" type="button" data-name="Chocolate Truffle (1/2 kg)" data-price="550" aria-label="Add Chocolate Truffle (1/2 kg)">+</button></li>
-      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Photo Cake (1 kg)</b><small>Sample item</small></div>
-        <span class="price">₹1100</span><button class="add" type="button" data-name="Photo Cake (1 kg)" data-price="1100" aria-label="Add Photo Cake (1 kg)">+</button></li>
-      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Pastry (1 pc)</b><small>Sample item</small></div>
-        <span class="price">₹60</span><button class="add" type="button" data-name="Pastry (1 pc)" data-price="60" aria-label="Add Pastry (1 pc)">+</button></li>
-      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Cupcake box (6)</b><small>Sample item</small></div>
-        <span class="price">₹300</span><button class="add" type="button" data-name="Cupcake box (6)" data-price="300" aria-label="Add Cupcake box (6)">+</button></li></ul>
+      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>English Breakfast</b><small>Sample item</small></div>
+        <span class="price">₹480</span><button class="add" type="button" data-name="English Breakfast" data-price="480" aria-label="Add English Breakfast">+</button></li>
+      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Rum Ball</b><small>Sample item</small></div>
+        <span class="price">₹120</span><button class="add" type="button" data-name="Rum Ball" data-price="120" aria-label="Add Rum Ball">+</button></li>
+      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Black Forest Pastry</b><small>Sample item</small></div>
+        <span class="price">₹160</span><button class="add" type="button" data-name="Black Forest Pastry" data-price="160" aria-label="Add Black Forest Pastry">+</button></li>
+      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Chicken Sandwich</b><small>Sample item</small></div>
+        <span class="price">₹260</span><button class="add" type="button" data-name="Chicken Sandwich" data-price="260" aria-label="Add Chicken Sandwich">+</button></li>
+      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Plum Cake (500 g)</b><small>Sample item</small></div>
+        <span class="price">₹520</span><button class="add" type="button" data-name="Plum Cake (500 g)" data-price="520" aria-label="Add Plum Cake (500 g)">+</button></li>
+      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Darjeeling Tea Pot</b><small>Sample item</small></div>
+        <span class="price">₹180</span><button class="add" type="button" data-name="Darjeeling Tea Pot" data-price="180" aria-label="Add Darjeeling Tea Pot">+</button></li></ul>
   <h2>Isme kya milega</h2>
   <div class="feat">
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Seedha order</b>Customer menu dekh ke order kare, aapke WhatsApp pe aaye. Koi commission nahi.</div>
@@ -70,7 +75,16 @@ footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-s
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Rate badlo</b>Owner panel (PIN) se rate/item khud badlo.</div>
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Aapka brand</b>Aapka naam, logo, rang — Zomato jaisa nahi, aapka apna.</div>
   </div>
-  <a class="btn ghost" href="https://misbahraza288-tech.github.io/misbah-sites/hq/talk/?l=em-1vuifve&amp;t=rfn3yegjifxc7ar4ef"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Sawaal poochein (AI assistant)</span></a>
+  
+
+  <section class="plan" aria-label="What we'd do">
+    <h2>What we'd do for Flurys</h2>
+    <p class="cz">Heritage tearoom &amp; patisserie · Kolkata</p>
+    <h3>What we noticed</h3><ul class="nd"><li>No own online ordering found on the website</li><li>No online table booking found</li><li>No Instagram link on the website</li><li>No YouTube channel linked</li><li>No LinkedIn page linked</li></ul>
+    <h3>Plan</h3><ol class="st"><li><b>Own website + online ordering</b><span>Full menu, cart, pickup/delivery, UPI link — orders come straight to you, no aggregator commission.</span></li><li><b>Table booking &amp; waitlist</b><span>Book a table or join the queue from the phone — fewer crowds at the door in rush hours.</span></li><li><b>Instagram plan</b><span>12 reels/posts a month: signature dishes, kitchen in action, rush-hour moments, festival specials (you approve every post).</span></li><li><b>YouTube</b><span>Shorts from the same shoots + one longer &quot;story of the dish&quot; video a month.</span></li><li><b>LinkedIn</b><span>Company page + posts for corporate orders, catering, franchise and hiring.</span></li></ol>
+    <div class="est"><div><small>Website + ordering + booking (one-time)</small><b>₹14,999</b></div><div><small>Social content (per month)</small><b>₹8,999</b></div></div>
+    <p class="fine">Prices are estimates — final quote after we see your menu and outlets. 50% advance, rest on delivery. No promise of extra orders or sales; items on this page are samples, not your real menu.</p>
+  </section>
 </main>
 <footer>Demo by Misbah Raza · QENLYX, Govindpur. Ye sirf preview hai — koi order kahin nahi jaata.</footer>
 <div class="cart"><div class="row"><div class="sum"><span id="cnt">0 item</span><b id="tot">₹0</b></div><button class="btn main" id="order" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>WhatsApp pe order</span></button></div></div>
