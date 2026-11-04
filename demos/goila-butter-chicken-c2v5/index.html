@@ -6,9 +6,9 @@
 <meta name="robots" content="noindex">
 <title>Goila Butter Chicken — Demo by QENLYX</title>
 <meta name="description" content="Goila Butter Chicken, Mumbai — online menu & order">
-<meta name="theme-color" content="#1f2a1d">
+<meta name="theme-color" content="#1b0f0b">
 <style>
-:root{--a:#e8c07d;--d:#1f2a1d;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
+:root{--a:#e86c3a;--d:#1b0f0b;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box}html,body{margin:0}body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--d);color:var(--ink)}
 svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .demo-bar{background:#111;color:#ddd;font-size:12px;padding:8px 16px;text-align:center;border-bottom:1px solid var(--line)}
@@ -38,6 +38,11 @@ h2{font:600 18px/1.3 Georgia,serif;margin:26px 0 10px}
 .toast{position:fixed;inset:auto 18px 90px;max-width:684px;margin:auto;background:#fff;color:#111;border-radius:14px;padding:14px 16px;font-size:14px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-size:12px}
 @media(min-width:720px){h1{font-size:38px}}
+.plan{margin-top:26px;border:1px solid var(--line);border-radius:16px;padding:16px;background:rgba(255,255,255,.03)}.plan h2{margin-top:0}.plan h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;font-weight:600}
+.cz{color:var(--mut);margin:-4px 0 0;font-size:13px}.nd{display:grid;gap:6px}.nd li{position:relative;padding-left:16px;font-size:14px}.nd li:before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--a)}
+.st{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}.st li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:2px 10px}.st li:before{content:counter(s);grid-row:span 2;width:24px;height:24px;border-radius:8px;border:1px solid var(--a);color:var(--a);display:grid;place-items:center;font-size:12px;font-weight:700}.st b{font-size:14px}.st span{color:var(--mut);font-size:13px}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.est div{border:1px solid var(--line);border-radius:12px;padding:10px}.est small{display:block;color:var(--mut);font-size:11px}.est b{font-size:20px;color:var(--a)}
+.fine{color:var(--mut);font-size:12px;margin-top:12px}
 </style>
 </head>
 <body>
@@ -45,24 +50,24 @@ footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-s
 <header>
   <div class="mark" aria-hidden="true">G</div>
   <h1>Goila Butter Chicken</h1>
-  <p class="sub">Ghar jaisa khana, roz time pe</p>
+  <p class="sub">Famous butter chicken — direct order</p>
   <div class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Mumbai</span></div>
 </header>
 <main>
-  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Aaj ka menu</button><button class="chip" type="button">Monthly plan</button><button class="chip" type="button">Delivery area</button><button class="chip" type="button">Join karein</button></div>
+  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Butter Chicken</button><button class="chip" type="button">Biryani</button><button class="chip" type="button">Breads</button><button class="chip" type="button">Combos</button></div>
   <ul>
-      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>Veg thali (lunch)</b><small>Sample item</small></div>
-        <span class="price">₹80</span><button class="add" type="button" data-name="Veg thali (lunch)" data-price="80" aria-label="Add Veg thali (lunch)">+</button></li>
-      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Veg + egg thali</b><small>Sample item</small></div>
-        <span class="price">₹100</span><button class="add" type="button" data-name="Veg + egg thali" data-price="100" aria-label="Add Veg + egg thali">+</button></li>
-      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Weekly plan (6 din, 1 time)</b><small>Sample item</small></div>
-        <span class="price">₹450</span><button class="add" type="button" data-name="Weekly plan (6 din, 1 time)" data-price="450" aria-label="Add Weekly plan (6 din, 1 time)">+</button></li>
-      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Monthly plan (1 time)</b><small>Sample item</small></div>
-        <span class="price">₹1800</span><button class="add" type="button" data-name="Monthly plan (1 time)" data-price="1800" aria-label="Add Monthly plan (1 time)">+</button></li>
-      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Monthly plan (2 time)</b><small>Sample item</small></div>
-        <span class="price">₹3400</span><button class="add" type="button" data-name="Monthly plan (2 time)" data-price="3400" aria-label="Add Monthly plan (2 time)">+</button></li>
-      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Extra roti (4)</b><small>Sample item</small></div>
-        <span class="price">₹20</span><button class="add" type="button" data-name="Extra roti (4)" data-price="20" aria-label="Add Extra roti (4)">+</button></li></ul>
+      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>GBC Butter Chicken</b><small>Sample item</small></div>
+        <span class="price">₹420</span><button class="add" type="button" data-name="GBC Butter Chicken" data-price="420" aria-label="Add GBC Butter Chicken">+</button></li>
+      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Paneer Butter Masala</b><small>Sample item</small></div>
+        <span class="price">₹360</span><button class="add" type="button" data-name="Paneer Butter Masala" data-price="360" aria-label="Add Paneer Butter Masala">+</button></li>
+      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Butter Chicken Biryani</b><small>Sample item</small></div>
+        <span class="price">₹440</span><button class="add" type="button" data-name="Butter Chicken Biryani" data-price="440" aria-label="Add Butter Chicken Biryani">+</button></li>
+      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Dal Makhani</b><small>Sample item</small></div>
+        <span class="price">₹300</span><button class="add" type="button" data-name="Dal Makhani" data-price="300" aria-label="Add Dal Makhani">+</button></li>
+      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Butter Naan</b><small>Sample item</small></div>
+        <span class="price">₹70</span><button class="add" type="button" data-name="Butter Naan" data-price="70" aria-label="Add Butter Naan">+</button></li>
+      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Meal Combo</b><small>Sample item</small></div>
+        <span class="price">₹499</span><button class="add" type="button" data-name="Meal Combo" data-price="499" aria-label="Add Meal Combo">+</button></li></ul>
   <h2>Isme kya milega</h2>
   <div class="feat">
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Seedha order</b>Customer menu dekh ke order kare, aapke WhatsApp pe aaye. Koi commission nahi.</div>
@@ -70,7 +75,16 @@ footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-s
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Rate badlo</b>Owner panel (PIN) se rate/item khud badlo.</div>
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Aapka brand</b>Aapka naam, logo, rang — Zomato jaisa nahi, aapka apna.</div>
   </div>
-  <a class="btn ghost" href="https://misbahraza288-tech.github.io/misbah-sites/hq/talk/?l=em-145c2v5&amp;t=wv33cbmdfjs5zh7c3b"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Sawaal poochein (AI assistant)</span></a>
+  
+
+  <section class="plan" aria-label="What we'd do">
+    <h2>What we'd do for Goila Butter Chicken</h2>
+    <p class="cz">Chef Saransh Goila&#39;s butter chicken · Mumbai</p>
+    <h3>What we noticed</h3><ul class="nd"><li>No YouTube channel linked</li><li>No LinkedIn page linked</li></ul>
+    <h3>Plan</h3><ol class="st"><li><b>Website + ordering refresh</b><span>Faster mobile pages, menu by outlet, one-tap order/call/WhatsApp buttons.</span></li><li><b>Bulk &amp; festival pre-orders</b><span>Pre-order form for parties, festivals and corporate gifting, with pickup slots.</span></li><li><b>Instagram plan</b><span>12 reels/posts a month: signature dishes, kitchen in action, rush-hour moments, festival specials (you approve every post).</span></li><li><b>YouTube</b><span>Shorts from the same shoots + one longer &quot;story of the dish&quot; video a month.</span></li><li><b>LinkedIn</b><span>Company page + posts for corporate orders, catering, franchise and hiring.</span></li></ol>
+    <div class="est"><div><small>Website + ordering + pre-orders (one-time)</small><b>₹14,999</b></div><div><small>Social content (per month)</small><b>₹8,999</b></div></div>
+    <p class="fine">Prices are estimates — final quote after we see your menu and outlets. 50% advance, rest on delivery. No promise of extra orders or sales; items on this page are samples, not your real menu.</p>
+  </section>
 </main>
 <footer>Demo by Misbah Raza · QENLYX, Govindpur. Ye sirf preview hai — koi order kahin nahi jaata.</footer>
 <div class="cart"><div class="row"><div class="sum"><span id="cnt">0 item</span><b id="tot">₹0</b></div><button class="btn main" id="order" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>WhatsApp pe order</span></button></div></div>
