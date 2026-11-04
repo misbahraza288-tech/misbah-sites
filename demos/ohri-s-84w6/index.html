@@ -6,9 +6,9 @@
 <meta name="robots" content="noindex">
 <title>Ohri&#39;s — Demo by QENLYX</title>
 <meta name="description" content="Ohri&#39;s, Hyderabad — online menu & order">
-<meta name="theme-color" content="#231a12">
+<meta name="theme-color" content="#15120f">
 <style>
-:root{--a:#f0b35a;--d:#231a12;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
+:root{--a:#c99a5b;--d:#15120f;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box}html,body{margin:0}body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--d);color:var(--ink)}
 svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .demo-bar{background:#111;color:#ddd;font-size:12px;padding:8px 16px;text-align:center;border-bottom:1px solid var(--line)}
@@ -38,6 +38,11 @@ h2{font:600 18px/1.3 Georgia,serif;margin:26px 0 10px}
 .toast{position:fixed;inset:auto 18px 90px;max-width:684px;margin:auto;background:#fff;color:#111;border-radius:14px;padding:14px 16px;font-size:14px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-size:12px}
 @media(min-width:720px){h1{font-size:38px}}
+.plan{margin-top:26px;border:1px solid var(--line);border-radius:16px;padding:16px;background:rgba(255,255,255,.03)}.plan h2{margin-top:0}.plan h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;font-weight:600}
+.cz{color:var(--mut);margin:-4px 0 0;font-size:13px}.nd{display:grid;gap:6px}.nd li{position:relative;padding-left:16px;font-size:14px}.nd li:before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--a)}
+.st{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}.st li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:2px 10px}.st li:before{content:counter(s);grid-row:span 2;width:24px;height:24px;border-radius:8px;border:1px solid var(--a);color:var(--a);display:grid;place-items:center;font-size:12px;font-weight:700}.st b{font-size:14px}.st span{color:var(--mut);font-size:13px}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.est div{border:1px solid var(--line);border-radius:12px;padding:10px}.est small{display:block;color:var(--mut);font-size:11px}.est b{font-size:20px;color:var(--a)}
+.fine{color:var(--mut);font-size:12px;margin-top:12px}
 </style>
 </head>
 <body>
@@ -45,24 +50,24 @@ footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-s
 <header>
   <div class="mark" aria-hidden="true">O</div>
   <h1>Ohri&#39;s</h1>
-  <p class="sub">Menu dekho, order seedha WhatsApp pe</p>
+  <p class="sub">Har Ohri&#39;s restaurant ek app mein — order, table, banquet</p>
   <div class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Hyderabad</span></div>
 </header>
 <main>
-  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Bestsellers</button><button class="chip" type="button">Biryani &amp; rice</button><button class="chip" type="button">Starters</button><button class="chip" type="button">Combos</button></div>
+  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Biryani</button><button class="chip" type="button">Grills</button><button class="chip" type="button">Banquets</button><button class="chip" type="button">Desserts</button></div>
   <ul>
-      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>Chicken Biryani (half)</b><small>Sample item</small></div>
-        <span class="price">₹140</span><button class="add" type="button" data-name="Chicken Biryani (half)" data-price="140" aria-label="Add Chicken Biryani (half)">+</button></li>
-      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Chicken Biryani (full)</b><small>Sample item</small></div>
-        <span class="price">₹240</span><button class="add" type="button" data-name="Chicken Biryani (full)" data-price="240" aria-label="Add Chicken Biryani (full)">+</button></li>
-      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Paneer Butter Masala</b><small>Sample item</small></div>
-        <span class="price">₹180</span><button class="add" type="button" data-name="Paneer Butter Masala" data-price="180" aria-label="Add Paneer Butter Masala">+</button></li>
-      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Chicken Chilli (half)</b><small>Sample item</small></div>
-        <span class="price">₹150</span><button class="add" type="button" data-name="Chicken Chilli (half)" data-price="150" aria-label="Add Chicken Chilli (half)">+</button></li>
-      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Tandoori Roti</b><small>Sample item</small></div>
-        <span class="price">₹12</span><button class="add" type="button" data-name="Tandoori Roti" data-price="12" aria-label="Add Tandoori Roti">+</button></li>
-      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Family Combo (4)</b><small>Sample item</small></div>
-        <span class="price">₹799</span><button class="add" type="button" data-name="Family Combo (4)" data-price="799" aria-label="Add Family Combo (4)">+</button></li></ul>
+      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>Hyderabadi Chicken Biryani</b><small>Sample item</small></div>
+        <span class="price">₹380</span><button class="add" type="button" data-name="Hyderabadi Chicken Biryani" data-price="380" aria-label="Add Hyderabadi Chicken Biryani">+</button></li>
+      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Paneer Tikka</b><small>Sample item</small></div>
+        <span class="price">₹320</span><button class="add" type="button" data-name="Paneer Tikka" data-price="320" aria-label="Add Paneer Tikka">+</button></li>
+      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Mutton Seekh Kebab</b><small>Sample item</small></div>
+        <span class="price">₹420</span><button class="add" type="button" data-name="Mutton Seekh Kebab" data-price="420" aria-label="Add Mutton Seekh Kebab">+</button></li>
+      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Dal Makhani</b><small>Sample item</small></div>
+        <span class="price">₹280</span><button class="add" type="button" data-name="Dal Makhani" data-price="280" aria-label="Add Dal Makhani">+</button></li>
+      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Banquet enquiry (per plate)</b><small>Sample item</small></div>
+        <button class="add" type="button" data-name="Banquet enquiry (per plate)" data-price="0" aria-label="Add Banquet enquiry (per plate)">+</button></li>
+      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Qubani ka Meetha</b><small>Sample item</small></div>
+        <span class="price">₹180</span><button class="add" type="button" data-name="Qubani ka Meetha" data-price="180" aria-label="Add Qubani ka Meetha">+</button></li></ul>
   <h2>Isme kya milega</h2>
   <div class="feat">
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Seedha order</b>Customer menu dekh ke order kare, aapke WhatsApp pe aaye. Koi commission nahi.</div>
@@ -70,7 +75,16 @@ footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-s
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Rate badlo</b>Owner panel (PIN) se rate/item khud badlo.</div>
     <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Aapka brand</b>Aapka naam, logo, rang — Zomato jaisa nahi, aapka apna.</div>
   </div>
-  <a class="btn ghost" href="https://misbahraza288-tech.github.io/misbah-sites/hq/talk/?l=em-vb84w6&amp;t=i9mw7bvr8dqbhyjg5k"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Sawaal poochein (AI assistant)</span></a>
+  
+
+  <section class="plan" aria-label="What we'd do">
+    <h2>What we'd do for Ohri&#39;s</h2>
+    <p class="cz">Multi-cuisine restaurants &amp; banquets · Hyderabad</p>
+    <h3>What we noticed</h3><ul class="nd"><li>No own online ordering found on the website</li><li>No online table booking found</li><li>No YouTube channel linked</li><li>No LinkedIn page linked</li></ul>
+    <h3>Plan</h3><ol class="st"><li><b>Own website + online ordering</b><span>Full menu, cart, pickup/delivery, UPI link — orders come straight to you, no aggregator commission.</span></li><li><b>Table booking &amp; waitlist</b><span>Book a table or join the queue from the phone — fewer crowds at the door in rush hours.</span></li><li><b>Instagram plan</b><span>12 reels/posts a month: signature dishes, kitchen in action, rush-hour moments, festival specials (you approve every post).</span></li><li><b>YouTube</b><span>Shorts from the same shoots + one longer &quot;story of the dish&quot; video a month.</span></li><li><b>LinkedIn</b><span>Company page + posts for corporate orders, catering, franchise and hiring.</span></li></ol>
+    <div class="est"><div><small>Website + ordering + booking (one-time)</small><b>₹14,999</b></div><div><small>Social content (per month)</small><b>₹8,999</b></div></div>
+    <p class="fine">Prices are estimates — final quote after we see your menu and outlets. 50% advance, rest on delivery. No promise of extra orders or sales; items on this page are samples, not your real menu.</p>
+  </section>
 </main>
 <footer>Demo by Misbah Raza · QENLYX, Govindpur. Ye sirf preview hai — koi order kahin nahi jaata.</footer>
 <div class="cart"><div class="row"><div class="sum"><span id="cnt">0 item</span><b id="tot">₹0</b></div><button class="btn main" id="order" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>WhatsApp pe order</span></button></div></div>
