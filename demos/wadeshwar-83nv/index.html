@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Wadeshwar — Demo by QENLYX</title>
+<meta name="description" content="Wadeshwar, Pune — online menu & order">
+<meta name="theme-color" content="#13140f">
+<style>
+:root{--a:#ebb04c;--d:#13140f;--ink:#f6f1ea;--mut:#b9b0a6;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html,body{margin:0}body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--d);color:var(--ink)}
+svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.demo-bar{background:#111;color:#ddd;font-size:12px;padding:8px 16px;text-align:center;border-bottom:1px solid var(--line)}
+header{padding:28px 18px 18px;max-width:720px;margin:auto}
+.mark{width:52px;height:52px;border-radius:14px;background:var(--a);color:var(--d);display:grid;place-items:center;font:700 22px/1 Georgia,serif;margin-bottom:14px}
+h1{font:600 30px/1.15 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0 0 14px}.meta{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--mut);font-size:13px}.meta span{display:flex;gap:6px;align-items:center}
+.meta svg{color:var(--a)}
+main{max-width:720px;margin:auto;padding:0 18px 120px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:6px 0 14px;scrollbar-width:none}.chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:13px}
+.chip.on{background:var(--a);color:var(--d);border-color:var(--a);font-weight:600}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.item{display:grid;grid-template-columns:56px 1fr auto auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
+.thumb{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--a),transparent 70%),rgba(255,255,255,.06)}
+.t1{background:radial-gradient(circle at 30% 30%,var(--a),transparent 60%),rgba(255,255,255,.06)}.t2{background:linear-gradient(200deg,var(--a),transparent 65%),rgba(255,255,255,.08)}
+.t3{background:conic-gradient(from 90deg,var(--a),transparent,var(--a)),rgba(255,255,255,.05)}.t4{background:radial-gradient(circle at 70% 60%,var(--a),transparent 55%),rgba(255,255,255,.06)}.t5{background:linear-gradient(90deg,var(--a),transparent),rgba(255,255,255,.05)}
+.info b{display:block;font-weight:600}.info small{color:var(--mut);font-size:11px}.price{font-weight:600}
+.add{width:34px;height:34px;border-radius:10px;border:1px solid var(--a);background:transparent;color:var(--a);font-size:20px;line-height:1}
+.add:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+h2{font:600 18px/1.3 Georgia,serif;margin:26px 0 10px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:10px}.feat div{border:1px solid var(--line);border-radius:14px;padding:12px;font-size:13px;color:var(--mut)}.feat b{display:flex;gap:8px;align-items:center;color:var(--ink);margin-bottom:4px}
+.feat svg{color:var(--a)}
+.btn{display:flex;gap:8px;align-items:center;justify-content:center;padding:13px 16px;border-radius:12px;font-weight:600;text-decoration:none;border:0;font:inherit;cursor:pointer}
+.btn.main{background:var(--a);color:var(--d)}.btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent;margin-top:10px}
+.cart{position:fixed;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(10,10,10,.92);border-top:1px solid var(--line)}
+.cart .row{max-width:720px;margin:auto;display:flex;gap:12px;align-items:center}.cart .sum{flex:1;font-size:13px;color:var(--mut)}.cart .sum b{color:var(--ink);font-size:16px;display:block}
+.toast{position:fixed;inset:auto 18px 90px;max-width:684px;margin:auto;background:#fff;color:#111;border-radius:14px;padding:14px 16px;font-size:14px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+footer{max-width:720px;margin:30px auto 0;padding:0 18px;color:var(--mut);font-size:12px}
+@media(min-width:720px){h1{font-size:38px}}
+.plan{margin-top:26px;border:1px solid var(--line);border-radius:16px;padding:16px;background:rgba(255,255,255,.03)}.plan h2{margin-top:0}.plan h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;font-weight:600}
+.cz{color:var(--mut);margin:-4px 0 0;font-size:13px}.nd{display:grid;gap:6px}.nd li{position:relative;padding-left:16px;font-size:14px}.nd li:before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--a)}
+.st{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}.st li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:2px 10px}.st li:before{content:counter(s);grid-row:span 2;width:24px;height:24px;border-radius:8px;border:1px solid var(--a);color:var(--a);display:grid;place-items:center;font-size:12px;font-weight:700}.st b{font-size:14px}.st span{color:var(--mut);font-size:13px}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.est div{border:1px solid var(--line);border-radius:12px;padding:10px}.est small{display:block;color:var(--mut);font-size:11px}.est b{font-size:20px;color:var(--a)}
+.fine{color:var(--mut);font-size:12px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo preview — Wadeshwar ke liye QENLYX ne banaya. Photos/items sample hain; asli menu aapse lenge.</div>
+<header>
+  <div class="mark" aria-hidden="true">W</div>
+  <h1>Wadeshwar</h1>
+  <p class="sub">Pune ki subah — apna order page, Swiggy commission ke bina</p>
+  <div class="meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Pune</span></div>
+</header>
+<main>
+  <div class="chips" role="tablist" aria-label="Sections"><button class="chip on" type="button">Dosa</button><button class="chip" type="button">Idli</button><button class="chip" type="button">Uttapam</button><button class="chip" type="button">Coffee</button></div>
+  <ul>
+      <li class="item"><div class="thumb t0" aria-hidden="true"></div><div class="info"><b>Butter Masala Dosa</b><small>Sample item</small></div>
+        <span class="price">₹170</span><button class="add" type="button" data-name="Butter Masala Dosa" data-price="170" aria-label="Add Butter Masala Dosa">+</button></li>
+      <li class="item"><div class="thumb t1" aria-hidden="true"></div><div class="info"><b>Idli Chutney</b><small>Sample item</small></div>
+        <span class="price">₹100</span><button class="add" type="button" data-name="Idli Chutney" data-price="100" aria-label="Add Idli Chutney">+</button></li>
+      <li class="item"><div class="thumb t2" aria-hidden="true"></div><div class="info"><b>Mysore Sada</b><small>Sample item</small></div>
+        <span class="price">₹150</span><button class="add" type="button" data-name="Mysore Sada" data-price="150" aria-label="Add Mysore Sada">+</button></li>
+      <li class="item"><div class="thumb t3" aria-hidden="true"></div><div class="info"><b>Onion Uttapam</b><small>Sample item</small></div>
+        <span class="price">₹150</span><button class="add" type="button" data-name="Onion Uttapam" data-price="150" aria-label="Add Onion Uttapam">+</button></li>
+      <li class="item"><div class="thumb t4" aria-hidden="true"></div><div class="info"><b>Upma</b><small>Sample item</small></div>
+        <span class="price">₹90</span><button class="add" type="button" data-name="Upma" data-price="90" aria-label="Add Upma">+</button></li>
+      <li class="item"><div class="thumb t5" aria-hidden="true"></div><div class="info"><b>Filter Coffee</b><small>Sample item</small></div>
+        <span class="price">₹50</span><button class="add" type="button" data-name="Filter Coffee" data-price="50" aria-label="Add Filter Coffee">+</button></li></ul>
+  <h2>Isme kya milega</h2>
+  <div class="feat">
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Seedha order</b>Customer menu dekh ke order kare, aapke WhatsApp pe aaye. Koi commission nahi.</div>
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2"/></svg>QR code</b>Counter/table pe QR — scan karte hi menu.</div>
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Rate badlo</b>Owner panel (PIN) se rate/item khud badlo.</div>
+    <div><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Aapka brand</b>Aapka naam, logo, rang — Zomato jaisa nahi, aapka apna.</div>
+  </div>
+  
+
+  <section class="plan" aria-label="What we'd do">
+    <h2>What we'd do for Wadeshwar</h2>
+    <p class="cz">South Indian · Pune favourite · Pune</p>
+    <h3>What we noticed</h3><ul class="nd"><li>Online orders go to Swiggy/Zomato — no commission-free order page of their own</li><li>No online table booking found</li><li>No LinkedIn page linked</li></ul>
+    <h3>Plan</h3><ol class="st"><li><b>Own website + online ordering</b><span>Full menu, cart, pickup/delivery, UPI link — orders come straight to you, no aggregator commission.</span></li><li><b>Table booking &amp; waitlist</b><span>Book a table or join the queue from the phone — fewer crowds at the door in rush hours.</span></li><li><b>Instagram plan</b><span>12 reels/posts a month: signature dishes, kitchen in action, rush-hour moments, festival specials (you approve every post).</span></li><li><b>LinkedIn</b><span>Company page + posts for corporate orders, catering, franchise and hiring.</span></li></ol>
+    <div class="est"><div><small>Website + ordering + booking (one-time)</small><b>₹14,999</b></div><div><small>Social content (per month)</small><b>₹8,999</b></div></div>
+    <p class="fine">Prices are estimates — final quote after we see your menu and outlets. 50% advance, rest on delivery. No promise of extra orders or sales; items on this page are samples, not your real menu.</p>
+  </section>
+</main>
+<footer>Demo by Misbah Raza · QENLYX, Govindpur. Ye sirf preview hai — koi order kahin nahi jaata.</footer>
+<div class="cart"><div class="row"><div class="sum"><span id="cnt">0 item</span><b id="tot">₹0</b></div><button class="btn main" id="order" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>WhatsApp pe order</span></button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){var c=[],tot=0,T=document.getElementById('toast');function say(m){T.textContent=m;T.style.display='block';clearTimeout(say.t);say.t=setTimeout(function(){T.style.display='none'},3800)}
+document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){c.push(b.dataset.name);tot+=Number(b.dataset.price)||0;document.getElementById('cnt').textContent=c.length+' item';document.getElementById('tot').textContent='₹'+tot})});
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+var WA="",NM="Wadeshwar";document.getElementById('order').addEventListener('click',function(){if(!c.length){say('Pehle koi item add karo (+)');return}
+if(!WA){say('Demo: asli app mein ye order seedha '+NM+' ke WhatsApp pe jaayega — naam, items aur total ke saath.');return}
+location.href=WA+'?text='+encodeURIComponent('Order: '+c.join(', ')+' | Total ₹'+tot)});})();
+</script>
+</body>
+</html>
