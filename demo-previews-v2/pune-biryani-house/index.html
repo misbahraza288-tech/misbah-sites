@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Pune Biryani House — Demo by QENLYX</title>
+<meta name="description" content="Pune Biryani House, Hirak Road — menu dekho aur seedha order karo.">
+<meta name="theme-color" content="#7D1F2C">
+<style>
+:root{--pri:#7D1F2C;--acc:#D9822B;--bg:#FBF4EA;--sf:#FFFFFF;--ink:#2B1B14;--mut:#6E5A4B;--line:#EADBC6;--on:#FFF8F0;--r:18px}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:110px}
+img,svg{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.mk{width:14px;height:14px;stroke-width:1.8;color:var(--pri);margin-right:6px;vertical-align:-2px}
+.demo-bar{background:var(--ink);color:#F4EDE3;font-size:12.5px;padding:9px 16px;text-align:center}
+main{max-width:720px;margin:0 auto;padding:0 18px}
+.hero{padding:34px 0 22px}
+.mark{width:56px;height:56px;border-radius:16px;background:var(--pri);color:var(--on);display:grid;place-items:center;font:700 24px/1 Georgia,"Times New Roman",serif;margin-bottom:18px}
+.eyebrow{margin:0 0 6px;color:var(--pri);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font:700 34px/1.12 Georgia,"Times New Roman",serif;margin:0 0 8px;letter-spacing:-.01em;overflow-wrap:anywhere}
+.sub{margin:0 0 16px;color:var(--mut);font-size:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14px;color:var(--mut)}
+.meta span{display:inline-flex;gap:6px;align-items:center}
+.meta .ic{color:var(--pri);width:17px;height:17px}
+.meta b{color:var(--ink)}
+.rt .ic{color:var(--acc);fill:var(--acc);stroke:var(--acc)}
+h2{font:700 22px/1.25 Georgia,"Times New Roman",serif;margin:30px 0 12px;color:var(--ink)}
+.chips{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin:0 -18px;padding-left:18px;padding-right:18px;background:var(--bg);scrollbar-width:none;border-bottom:1px solid var(--line)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;text-decoration:none;border:1px solid var(--line);background:var(--sf);color:var(--ink);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:500}
+.chip.on,.chip:hover{background:var(--pri);color:var(--on);border-color:var(--pri)}
+.tile{position:relative;aspect-ratio:4/3;border-radius:14px;background:linear-gradient(155deg,var(--ta) 0%,var(--tb) 100%);overflow:hidden;display:grid;place-items:center;flex:none}
+.tile .plate{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.55);left:19%;top:19%}
+.tile .tic{position:relative;width:48%;height:48%;fill:none;stroke:var(--pri);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.tile.sm{width:68px;aspect-ratio:1;border-radius:14px}
+.tile.xs{width:46px;aspect-ratio:1;border-radius:12px}
+.tile.xs .tic{width:52%;height:52%}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.row{display:grid;grid-template-columns:68px minmax(0,1fr) auto 44px;gap:12px;align-items:center;background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:10px}
+.inf{min-width:0}
+.nm{display:flex;align-items:center}
+.inf b{font-weight:600;font-size:15.5px;overflow-wrap:anywhere}
+.inf small,.cb small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+.pr{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.add{width:44px;height:44px;border-radius:12px;border:1.5px solid var(--pri);background:transparent;color:var(--pri);display:grid;place-items:center;padding:0}
+.add .ic{width:18px;height:18px;stroke-width:2}
+.add:hover,.add:focus-visible{background:var(--pri);color:var(--on)}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.card .tile{border-radius:0}
+.cb{padding:12px 12px 14px}
+.cb b{display:block;font-size:15px;line-height:1.3;min-height:40px}
+.cr{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:6px}
+.hero.v-bold{background:var(--pri);color:var(--on);margin:0 -18px;padding:34px 18px 26px;border-radius:0 0 28px 28px}
+.hero.v-bold h1{color:var(--on)}
+.hero.v-bold .sub,.hero.v-bold .meta,.hero.v-bold .meta b{color:var(--on)}
+.hero.v-bold .meta .ic{color:var(--acc);stroke:var(--acc)}
+.hero.v-bold .eyebrow{color:var(--on);opacity:.92}
+.hero.v-bold .mark{background:var(--acc);color:var(--ink)}
+.hero.v-bold .rt .ic{fill:var(--acc)}
+.hscroll{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none}
+.hscroll::-webkit-scrollbar{display:none}
+.hcard{flex:none;width:156px;background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:8px 8px 12px;display:grid;gap:6px}
+.hcard .tile{border-radius:12px}
+.hcard b{font-size:14.5px;line-height:1.3;min-height:38px}
+.hero.v-ed{padding-top:40px}
+.hero.v-ed h1{font-size:40px;font-weight:600}
+.hero.v-ed .rule{height:2px;width:56px;background:var(--acc);margin:6px 0 14px}
+.sec.ed .edh{display:flex;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sec.ed .edh span{color:var(--pri);font-weight:700;font-size:14px}
+.sec.ed h2{margin:0;font-size:24px}
+.lead{list-style:none;margin:6px 0 0;padding:0}
+.lead li{display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.lead .dn{font-weight:600;overflow-wrap:anywhere;min-width:0}
+.lead .dots{flex:1;min-width:12px;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+.lead .add{width:38px;height:38px;border-radius:10px}
+.muted{color:var(--mut);font-size:14.5px;margin:0 0 12px}
+.vid{margin-top:34px;background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.vid h2{margin:0 0 6px}
+.vid video{width:100%;border-radius:14px;background:#000;margin:10px 0 12px;max-height:70vh}
+.panel{margin-top:30px;display:grid;gap:12px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feat div{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:14px;font-size:14px;color:var(--mut)}
+.feat b{display:flex;gap:8px;align-items:center;color:var(--ink);font-size:15px;margin-bottom:6px}
+.feat .ic{color:var(--pri);width:20px;height:20px}
+.btn{display:flex;gap:8px;align-items:center;justify-content:center;padding:14px 18px;border-radius:14px;font-weight:600;text-decoration:none;border:0;font:inherit;min-height:48px}
+.btn.main{background:var(--pri);color:var(--on)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--sf);margin-top:12px}
+.btn:focus-visible,.add:focus-visible,.chip:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+footer{max-width:720px;margin:34px auto 0;padding:0 18px;color:var(--mut);font-size:12px;text-align:center}
+.cart{position:fixed;left:0;right:0;bottom:0;background:var(--sf);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(0,0,0,.06)}
+.cart .row2{max-width:720px;margin:0 auto;display:flex;gap:12px;align-items:center}
+.cart .sum{flex:1;font-size:13px;color:var(--mut)}
+.cart .sum b{display:block;color:var(--ink);font-size:17px}
+.cart .btn.main{padding:12px 16px;min-height:48px}
+.toast{position:fixed;left:18px;right:18px;bottom:96px;max-width:684px;margin:0 auto;background:var(--ink);color:#fff;border-radius:14px;padding:13px 16px;font-size:14px;display:none}
+@media(min-width:720px){h1{font-size:44px}.hero.v-ed h1{font-size:50px}.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:360px){.row{grid-template-columns:56px minmax(0,1fr) auto 40px;gap:9px}.tile.sm{width:56px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.6L12 16.6l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></symbol><symbol id="i-bag" viewBox="0 0 24 24"><path d="M5.5 8.5h13l-1 11.5h-11z"/><path d="M9 8.5a3 3 0 0 1 6 0"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18.5 14H20v6h-6v-1.5M17 17.5h1.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 6.5h15v9.5h-9l-4.5 3.5v-3.5h-1.5z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8.5 6.5v11l9-5.5z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-veg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><circle cx="12" cy="12" r="3.5"/></symbol><symbol id="i-nonveg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M12 8.5l4 6.5H8z"/></symbol><symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4z"/><path d="M9 8.5h6M9 12h6M9 15.5h4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5.5" y="10.5" width="13" height="9.5" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-biryani" viewBox="0 0 24 24"><path d="M4 11h16v1.5a8 7.5 0 0 1-16 0z"/><path d="M6 11a6 5.5 0 0 1 12 0"/><path d="M9 4.5c0 1 1 1.5 1 2.5M12.5 3.5c0 1 1 1.5 1 2.5M16 4.5c0 1 1 1.5 1 2.5"/></symbol><symbol id="i-pot" viewBox="0 0 24 24"><path d="M4.5 11h15v2a7.5 6.5 0 0 1-15 0z"/><path d="M8 11V9.5a4 4 0 0 1 8 0V11"/><path d="M10 5.5c.6.8.6 1.5 0 2.3M14 5.5c.6.8.6 1.5 0 2.3"/></symbol><symbol id="i-pizza" viewBox="0 0 24 24"><path d="M12 21L3.5 5.5a15 15 0 0 1 17 0z"/><path d="M7.5 9.5h.01M11.5 13h.01M14.5 9h.01"/></symbol><symbol id="i-burger" viewBox="0 0 24 24"><path d="M4.5 11a7.5 6 0 0 1 15 0z"/><path d="M4 14h16"/><path d="M5 17h14a1.5 1.5 0 0 1 0 3H5a1.5 1.5 0 0 1 0-3z"/></symbol><symbol id="i-noodles" viewBox="0 0 24 24"><path d="M3.5 11h17a8.5 7 0 0 1-17 0z"/><path d="M8.5 4.5L12 10.5M15.5 4.5L12 10.5"/></symbol><symbol id="i-cup" viewBox="0 0 24 24"><path d="M4.5 10h12v4.5a4.5 4.5 0 0 1-4.5 4.5H9a4.5 4.5 0 0 1-4.5-4.5z"/><path d="M16.5 11.5h1.2a2.3 2.3 0 0 1 0 4.6h-1.2"/><path d="M8 3.5c0 1 1 1 1 2M11.5 3.5c0 1 1 1 1 2"/></symbol><symbol id="i-drumstick" viewBox="0 0 24 24"><path d="M14.5 9.5c2.5 0 4.5-1.8 4.5-4.5 0 0-1-1-2.8-1-2.7 0-3.7 2.6-3.7 3.7l-5.5 5.5a2.6 2.6 0 0 0 3.7 3.7z"/></symbol><symbol id="i-wrap" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="8" ry="5"/><path d="M4 12c3 3 13 3 16 0"/></symbol><symbol id="i-cake" viewBox="0 0 24 24"><rect x="5" y="12" width="14" height="6.5" rx="1"/><path d="M5 16c2 1.5 4-1.5 7 0s5 1.5 7 0"/><path d="M12 12V8.5"/><path d="M12 5.5v.01"/></symbol><symbol id="i-sweet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M9 9.5c1 1.1 5 1.1 6 0M9 14.5c1-1 5-1 6 0"/></symbol><symbol id="i-bread" viewBox="0 0 24 24"><path d="M4.5 15c0-6 3.4-9 7.5-9s7.5 3 7.5 9c0 1.8-1.8 2.8-3.8 2.8H8.3c-2 0-3.8-1-3.8-2.8z"/><path d="M9 9.5l2 2M13.5 8l1.5 1.5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14z"/><path d="M5 19l7-7"/></symbol><symbol id="i-bowl" viewBox="0 0 24 24"><path d="M4 11h16a8 6.5 0 0 1-16 0z"/><path d="M9 7.5c0 1 .8 1.5.8 2.5M13 7.5c0 1 .8 1.5.8 2.5"/></symbol><symbol id="i-momo" viewBox="0 0 24 24"><path d="M3.5 13.5c0-4.5 3.8-7.5 8.5-7.5s8.5 3 8.5 7.5c0 1-1 1.8-2 1.8h-13c-1 0-2-.8-2-1.8z"/><path d="M7 11.5l1 2M11 10.5v2.5M15 11.5l-1 2"/></symbol><symbol id="i-star2" viewBox="0 0 24 24"><path d="M12 4l2.2 5.2 5.6.5-4.2 3.7 1.3 5.5L12 16l-4.9 2.9 1.3-5.5-4.2-3.7 5.6-.5z"/></symbol></defs></svg>
+<div class="demo-bar">Demo preview — Pune Biryani House ke liye QENLYX ne banaya. Items aur daam sample hain; asli menu aapse lenge.</div>
+<main>
+<header class="hero v-grid"><div class="mark">P</div><h1>Pune Biryani House</h1><p class="sub">Dum ki khushboo, ghar tak</p><div class="meta"><span><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Hirak Road</span><span class="rt"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><b>4.3</b> Google pe · 648 reviews</span><span><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg>10 AM–10 PM</span></div></header>
+<nav class="chips" aria-label="Menu sections"><a class="chip on" href="#s0">Biryani</a><a class="chip" href="#s1">Non-veg</a><a class="chip" href="#s2">Sides</a></nav>
+<section id="s0" class="sec"><h2>Biryani</h2><ul class="grid"><li class="card"><div class="tile " style="--ta:#F9E2C2;--tb:#F3CFA0" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-biryani"/></svg></div><div class="cb"><b>Chicken Biryani (half)</b><small>sample</small><div class="cr"><span class="pr">₹160</span><button class="add" type="button" data-name="Chicken Biryani (half)" data-price="160" aria-label="Add Chicken Biryani (half)"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li><li class="card"><div class="tile " style="--ta:#F3CFA0;--tb:#FBEBD6" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-biryani"/></svg></div><div class="cb"><b>Chicken Biryani (full)</b><small>sample</small><div class="cr"><span class="pr">₹260</span><button class="add" type="button" data-name="Chicken Biryani (full)" data-price="260" aria-label="Add Chicken Biryani (full)"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li><li class="card"><div class="tile " style="--ta:#FBEBD6;--tb:#F9E2C2" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-biryani"/></svg></div><div class="cb"><b>Mutton Biryani (half)</b><small>sample</small><div class="cr"><span class="pr">₹220</span><button class="add" type="button" data-name="Mutton Biryani (half)" data-price="220" aria-label="Add Mutton Biryani (half)"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li><li class="card"><div class="tile " style="--ta:#F9E2C2;--tb:#F3CFA0" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-biryani"/></svg></div><div class="cb"><b>Egg Biryani</b><small>sample</small><div class="cr"><span class="pr">₹140</span><button class="add" type="button" data-name="Egg Biryani" data-price="140" aria-label="Add Egg Biryani"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li></ul></section><section id="s1" class="sec"><h2>Non-veg</h2><ul class="grid"><li class="card"><div class="tile " style="--ta:#F3CFA0;--tb:#FBEBD6" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-drumstick"/></svg></div><div class="cb"><b>Chicken Kabab (2 pc)</b><small>sample</small><div class="cr"><span class="pr">₹120</span><button class="add" type="button" data-name="Chicken Kabab (2 pc)" data-price="120" aria-label="Add Chicken Kabab (2 pc)"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li><li class="card"><div class="tile " style="--ta:#FBEBD6;--tb:#F9E2C2" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-pot"/></svg></div><div class="cb"><b>Chicken Handi</b><small>sample</small><div class="cr"><span class="pr">₹280</span><button class="add" type="button" data-name="Chicken Handi" data-price="280" aria-label="Add Chicken Handi"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li><li class="card"><div class="tile " style="--ta:#F9E2C2;--tb:#F3CFA0" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-pot"/></svg></div><div class="cb"><b>Mutton Korma</b><small>sample</small><div class="cr"><span class="pr">₹320</span><button class="add" type="button" data-name="Mutton Korma" data-price="320" aria-label="Add Mutton Korma"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li></ul></section><section id="s2" class="sec"><h2>Sides</h2><ul class="grid"><li class="card"><div class="tile " style="--ta:#F3CFA0;--tb:#FBEBD6" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-bread"/></svg></div><div class="cb"><b>Tandoori Roti</b><small>sample</small><div class="cr"><span class="pr">₹15</span><button class="add" type="button" data-name="Tandoori Roti" data-price="15" aria-label="Add Tandoori Roti"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li><li class="card"><div class="tile " style="--ta:#FBEBD6;--tb:#F9E2C2" aria-hidden="true"><span class="plate"></span><svg class="tic" viewBox="0 0 24 24"><use href="#i-leaf"/></svg></div><div class="cb"><b>Raita</b><small>sample</small><div class="cr"><span class="pr">₹40</span><button class="add" type="button" data-name="Raita" data-price="40" aria-label="Add Raita"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div></li></ul></section>
+<section class="panel" aria-label="Isme kya milega">
+  <h2>Isme kya milega</h2>
+  <div class="feat">
+    <div><b><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bag"/></svg>Seedha order</b>Customer menu dekh ke order kare, aapke WhatsApp pe aaye. Koi commission nahi.</div>
+    <div><b><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-qr"/></svg>Table QR</b>Table ya counter pe QR — scan karte hi menu khul jaye.</div>
+    <div><b><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-receipt"/></svg>Owner panel</b>PIN se rate, item, offer aur orders khud badlo.</div>
+    <div><b><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>Aapka brand</b>Aapka naam, rang aur logo. Koi aur app ka naam nahi.</div>
+  </div>
+  
+</section>
+<section class="vid"><h2>Dekhiye order app kaise chalta hai</h2><p class="muted">79 second ka demo: menu, cart, WhatsApp pe order, owner panel.</p><video controls playsinline preload="metadata" src="https://misbah-apna-order-app.sites.tab.bot/apna-order-app.mp4" aria-label="Apna order app — kaise chalta hai"></video><a class="btn ghost" href="https://misbah-apna-order-app.sites.tab.bot/apna-order-app.mp4"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span>Video kholein</span></a></section>
+</main>
+<footer>Demo by Misbah Raza · QENLYX, Dhanbad. Preview hai — koi order kahin nahi jaata.</footer>
+<div class="cart" role="region" aria-label="Cart"><div class="row2"><div class="sum"><span id="cnt">0 item</span><b id="tot">₹0</b></div><button class="btn main" id="order" type="button"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bag"/></svg><span>WhatsApp pe order</span></button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){var c=[],tot=0,T=document.getElementById('toast'),WA="",NM="Pune Biryani House";
+function say(m){T.textContent=m;T.style.display='block';clearTimeout(say.t);say.t=setTimeout(function(){T.style.display='none'},3800)}
+document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){c.push(b.dataset.name);tot+=Number(b.dataset.price)||0;document.getElementById('cnt').textContent=c.length+(c.length===1?' item':' items');document.getElementById('tot').textContent='₹'+tot;say(b.dataset.name+' cart mein')})});
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+document.getElementById('order').addEventListener('click',function(){if(!c.length){say('Pehle koi item add karo (+)');return}
+if(!WA){say('Demo: asli app mein ye order seedha '+NM+' ke WhatsApp pe jaayega — naam, items aur total ke saath.');return}
+location.href=WA+'?text='+encodeURIComponent('Order: '+c.join(', ')+' | Total ₹'+tot)});})();
+</script>
+</body>
+</html>
